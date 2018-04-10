@@ -2,11 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6a1a84a-bfc1-4dc1-b6a9-4708e20493d4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/officespace-backend/models/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/officespace-backend/routes/rds-routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/officespace-backend/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/officespace-backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/officespace-backend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/officespace-frontend/public/img/Untitled-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/officespace-frontend/public/img/mountainImg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/officespace-frontend/public/img/nature.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/officespace-frontend/src/components/form-login/form-login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/officespace-frontend/src/components/form-login/form-login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/officespace-frontend/src/pages/login-page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/officespace-frontend/src/pages/login-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/officespace-backend/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/officespace-backend/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/officespace-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/officespace-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/officespace-frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/officespace-frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/officespace-frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/officespace-frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/officespace-frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/officespace-frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/officespace-frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/officespace-frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/officespace-frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/officespace-frontend/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,8 +32,8 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/officespace-backend/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+            <state relative-caret-position="405">
+              <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -33,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/officespace-backend/models/user.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+              <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -124,6 +133,7 @@
     <property name="node.js.selected.package.prettier" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -148,12 +158,12 @@
       <option name="presentableId" value="Default" />
       <updated>1523129794373</updated>
       <workItem from="1523129796100" duration="1132000" />
-      <workItem from="1523313162156" duration="4780000" />
+      <workItem from="1523313162156" duration="5111000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5912000" />
+    <option name="totallyTimeSpent" value="6243000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="38" width="1440" height="817" extended-state="0" />
@@ -212,14 +222,14 @@
     <entry file="file://$PROJECT_DIR$/officespace-backend/models/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/officespace-backend/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+        <state relative-caret-position="405">
+          <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
         </state>
       </provider>
     </entry>

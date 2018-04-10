@@ -25,7 +25,7 @@ require('./routes/api-routes.js')(app);
 //---------------------------------------------------------------------
 // TODO: Change to out site
 //-------------------------------------------------------------------
-dynamoose.connect('mongodb://localhost/persona').then(()=>{
+dynamoose.connect('mongodb://localhost/persona').then(()=>
     console.log('connected to mongodb');
     app.listen(port, (err)=>{
         if(err){
