@@ -1,85 +1,85 @@
 import React, { Component } from "react";
 import "./login-page.css";
-import TextField from 'material-ui/TextField';
-import RaisedButton from "material-ui/RaisedButton";
 
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
+  
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 
   
 
+
 export default class LoginPage extends Component {
-  state = {
-    
-    email: "",
-    password: ""
-  };
+     constructor(props) {
+    super(props);
 
-  change = e => {
-    this.props.onChange({ [e.target.name]: e.target.value });
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
-
-  onSubmit = e => {
-    e.preventDefault();
-    // this.props.onSubmit(this.state);
-    this.setState({
-     
+    this.state = {
       email: "",
       password: ""
-    });
-    this.props.onChange({
-    
-      email: "",
-      password: ""
-    });
-  };
+    };
+  }
+  validateForm() {
+    return this.state.email.length > 0 && this.state.password.length > 0;
+  }
 
+  handleChange = event => {
+    this.setState({
+      [event.target.id]: event.target.value
+    });
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+  }
+
+  
+
+
+
+  
   render() {
     return (
 
-      
-    
-         <CardMedia>
-           <img src="./img/nature.jpg" alt="background" id="loginBackground" />
-     
-<Card className="card-main">
-    
-    
-<p>Please login to your account</p>
-   <br />
-        
-        <TextField
-          name="email"
-          hintText="Email"
-          floatingLabelText="Email"
-          value={this.state.email}
-          onChange={e => this.change(e)}
-          floatingLabelFixed
-        />
-        <br />
+	 // <div className = "col-sm-8"> 
+  //       <div className = "row"> 
 
-        <TextField
-          name="password"
-          hintText="Password"
-          floatingLabelText="Password"
-          value={this.state.password}
-          onChange={e => this.change(e)}
-          type="password"
-          floatingLabelFixed
-        />
-        <br />
-        <RaisedButton label="Submit" onClick={e => this.onSubmit(e)} primary />
-        <p className="text-left">Forgot Password</p>
-</Card>
+    	<div className="login-card">
 
-</CardMedia>
+<div className="brand animated fadeIn">
+    	    	<img src="./img/Untitled-2.png" alt="logo" id="logo" />
+    	    	 <div className="paragraph">Please login to your account</div>
+    	  
+    	    
 
-     
-     
-    );
-  }
+    	<div className = "row"> 
+        <div className="col-sm-12">
+ <Form>
+
+
+        <div className="form-group">
+         
+          <Input type="email" className="form-control" id="inputTextEmail" placeholder="Email" />
+        </div>
+    	<div className = "row"> 
+        <div className="col-sm-12">
+       <div className="form-group">
+       
+          <Input type="password" className="form-control" id="inputTextPassword" placeholder="Password" />
+        </div>
+          <button className="btn btn">Login</button>
+          <p>Forgot Password</p>
+          	</div>
+     	</div>
+        </Form>
+   </div>
+        </div>
+     	</div>
+     	</div>
+// </div>
+// </div>
+
+
+  )
+
+}
 }

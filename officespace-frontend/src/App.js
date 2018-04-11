@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import injectTapEventPlugin from 'react-tap-event-plugin';
+import { Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle} from 'reactstrap';
 
 import logo from "./logo.svg";
 import "./App.css";
 import LoginPage from "./pages/login-page";
+import { Button } from 'reactstrap';
 
-injectTapEventPlugin();
+
+
 
 class App extends Component {
   state = {
@@ -24,12 +26,13 @@ class App extends Component {
 
   render() {
     return (
-      <MuiThemeProvider>
+   
         <div className="App">
           <LoginPage onChange={fields => this.onChange(fields)} />
           
         </div>
-      </MuiThemeProvider>
+        
+   
     );
   }
 }

@@ -1,49 +1,28 @@
 import React, { Component } from "react";
 import "./form-login.css";
-import TextField from 'material-ui/TextField';
-import RaisedButton from "material-ui/RaisedButton";
 
-export default class Form extends Component {
-  state = {
-    firstName: "",
-    lastName: "",
-    username: "",
-    email: "",
-    password: ""
-  };
 
-  change = e => {
-    this.props.onChange({ [e.target.name]: e.target.value });
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
 
-  onSubmit = e => {
-    e.preventDefault();
-    // this.props.onSubmit(this.state);
-    this.setState({
-      firstName: "",
-      lastName: "",
-      username: "",
-      email: "",
-      password: ""
-    });
-    this.props.onChange({
-      firstName: "",
-      lastName: "",
-      username: "",
-      email: "",
-      password: ""
-    });
-  };
 
+import Paper from 'material-ui/Paper';
+
+const style = {
+  height: 100,
+  width: 100,
+  margin: 20,
+  textAlign: 'center',
+  display: 'inline-block',
+};
+
+
+ class PaperModel extends Component {
   render() {
     return (
-      <img src="./img/nature.jpg" alt="background" id="loginBackground" />
-      <form>
-        
-        <TextField
+  <div>
+ 
+    <Paper style={style} zDepth={3} rectangle>
+    <div style={{margin: '40% 0 0 35%', position: 'absolute'}}>
+    <input
           name="email"
           hintText="Email"
           floatingLabelText="Email"
@@ -52,7 +31,8 @@ export default class Form extends Component {
           floatingLabelFixed
         />
         <br />
-        <TextField
+
+        <input
           name="password"
           hintText="Password"
           floatingLabelText="Password"
@@ -62,9 +42,15 @@ export default class Form extends Component {
           floatingLabelFixed
         />
         <br />
-        <RaisedButton label="Submit" onClick={e => this.onSubmit(e)} primary />
+        <button label="Submit" onClick={e => this.onSubmit(e)} primary />
         <p className="text-left">Forgot Password</p>
-      </form>
-    );
+</div>
+</Paper>
+</div>
+    
+  
+);
   }
 }
+
+export default PaperModel;
