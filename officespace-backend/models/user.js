@@ -5,11 +5,15 @@ module.exports = mongoose.model('Persona', new mongoose.Schema(
         username: {
             type: String,
             trim: true,
-            required: true,
-            rangeKey:true
+            required: true
+        },
+        password:{
+            type: String,
+            required: true
         },
         account: {
             type: String,
+            trim: true,
             required: true,
         },
         region: {
@@ -18,10 +22,12 @@ module.exports = mongoose.model('Persona', new mongoose.Schema(
         },
         email: {
             type: String,
+            trim: true,
             required: true
         },
         bucket: {
-            type: String
+            type: String,
+            trim: true
         },
         imgUrl: {
             type: String,
