@@ -1,11 +1,7 @@
-const dynamoose = require('dynamoose');
+const mongoose = require('mongoose');
 
-module.exports = dynamoose.model('User', new dynamoose.Schema(
+module.exports = mongoose.model('Persona', new mongoose.Schema(
     {
-        userId:{
-            type: String,
-            hashKey: true
-        },
         username: {
             type: String,
             trim: true,
@@ -17,6 +13,10 @@ module.exports = dynamoose.model('User', new dynamoose.Schema(
             required: true,
 
         },
+        region: {
+            type: String,
+            required: true
+        },
         email: {
             type: String,
             required: true,
@@ -25,12 +25,19 @@ module.exports = dynamoose.model('User', new dynamoose.Schema(
         imgUrl: {
             type: String,
             default: ''
-        }
-    },
-    {
-        timestamps: {
-            createdAt: 'creationDate',
-            updatedAt: 'lastUpdateDate'
-        }
+        },
+        createdAt: {
+            type: Date,
+            required: true,
+            default: Date.now
+        },
+        updatedAt: {
+            type: Date,
+            required: true,
+            default: Date.now
+        },
     }
 ));
+
+
+

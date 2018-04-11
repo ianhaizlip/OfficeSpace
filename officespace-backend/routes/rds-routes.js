@@ -1,24 +1,31 @@
 const User = require('../models/user');
-const dynamoose = require('dynamoose');
 
-module.exports = (rds) => {
-    //Route to get an individual user
-    app.get('/api/user', (req, res) => {
-        User.getOne({username: req.body.username}, (err,user)=>{
+module.exports = (app) => {
+    app.get('/api/users', (req, res) => {
+        User.find({}, (err,users)=>{
             if(err){
                 res.status(500).json(err);
             }
 
             else{
-                res.status(201).json(user);
+                res.status(201).json(users);
             }
         });
-        res.end('get request received /api/persona')
+        res.end('get request received /api/users')
     });
+    app.get('/api/users/:id', (req, res) => {
+        User.findOne({ '_id': req.params.id }, (err,user)=>{
+            if(err){
+                res.status(500).json(err);
+            }
 
-    //make a new user
-    app.post('/api/user', (req, res) => {
-
+            else{
+                res.status(201).json(persona);
+            }
+        });
+        res.end('get request received /api/user/:id')
+    });
+    app.post('/api/users', (req, res) => {
         (new User(req.body).save((err, user) => {
                 if(err){
                     res.status(500).json(err);
@@ -30,12 +37,13 @@ module.exports = (rds) => {
 
             }
         ));
+        //console.log(req.params);
+        //res.end('post request received /api/persona')
     });
+    app.put('/api/users/:id', (req, res) => {
 
-    //change the info of a user
-    app.put('/api/personas/:id', (req, res) => {
-
-        User.update({_id: req.params.id}, req.body, {new:true}, (err,user)=>{
+        const updateObject = Object.assign({updatedAt: new Date()}, req.body);
+        User.findOneAndUpdate({_id: req.params.id}, updateObject, {new:true}, (err,user)=>{
             if(err){
                 res.status(500).json(err);
             }
@@ -48,17 +56,18 @@ module.exports = (rds) => {
         console.log(req.params);
         console.log(req.body);
     });
-    //delete a user from the database
-    app.delete('/api/persona/:id', (req, res) => {
-        User.delete({_id: req.params.id}, (err)=>{
+    app.delete('/api/persona', (req, res) => {
 
+        User.deleteOne({_id: req.params.id}, (err)=>{
             if(err){
                 res.status(500).json(err);
             }
+
             else{
                 res.status(201).json({});
             }
         });
         console.log(req.params);
+        //res.end('delete request received /api/persona:id')
     });
 };
