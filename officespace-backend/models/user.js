@@ -11,7 +11,6 @@ module.exports = mongoose.model('Persona', new mongoose.Schema(
         account: {
             type: String,
             required: true,
-
         },
         region: {
             type: String,
@@ -19,8 +18,10 @@ module.exports = mongoose.model('Persona', new mongoose.Schema(
         },
         email: {
             type: String,
-            required: true,
-
+            required: true
+        },
+        bucket: {
+            type: String
         },
         imgUrl: {
             type: String,
