@@ -1,6 +1,7 @@
 const User = require('../models/user');
 
 module.exports = (app) => {
+    //get user all users
     app.get('/api/users', (req, res) => {
         User.find({}, (err,users)=>{
             if(err){
@@ -13,6 +14,7 @@ module.exports = (app) => {
         });
         res.end('get request received /api/users')
     });
+    //get one user
     app.get('/api/users/:id', (req, res) => {
         User.findOne({ '_id': req.params.id }, (err,user)=>{
             if(err){
@@ -25,7 +27,8 @@ module.exports = (app) => {
         });
         res.end('get request received /api/user/:id')
     });
-    app.post('/api/users', (req, res) => {
+    //create a user
+    app.post('/api/user', (req, res) => {
         (new User(req.body).save((err, user) => {
                 if(err){
                     res.status(500).json(err);
@@ -40,7 +43,8 @@ module.exports = (app) => {
         //console.log(req.params);
         //res.end('post request received /api/persona')
     });
-    app.put('/api/users/:id', (req, res) => {
+    //update user
+    app.put('/api/user/:id', (req, res) => {
 
         const updateObject = Object.assign({updatedAt: new Date()}, req.body);
         User.findOneAndUpdate({_id: req.params.id}, updateObject, {new:true}, (err,user)=>{
@@ -56,7 +60,8 @@ module.exports = (app) => {
         console.log(req.params);
         console.log(req.body);
     });
-    app.delete('/api/persona', (req, res) => {
+    //delete user
+    app.delete('/api/user', (req, res) => {
 
         User.deleteOne({_id: req.params.id}, (err)=>{
             if(err){
