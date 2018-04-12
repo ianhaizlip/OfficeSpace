@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle} from 'reactstrap';
 
+
+
 import logo from "./logo.svg";
 import "./App.css";
-import LoginPage from "./pages/login-page";
+// import LoginPage from "./pages/login-page";
 import { Button } from 'reactstrap';
-
+import SideBar from './components/sidebar/side-bar';
 
 
 
@@ -28,10 +30,11 @@ class App extends Component {
     return (
    
         <div className="App">
-          <LoginPage onChange={fields => this.onChange(fields)} />
+        
+           <SideBar />
           
         </div>
-        
+       
    
     );
   }

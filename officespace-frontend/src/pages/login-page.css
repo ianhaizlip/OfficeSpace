@@ -1,12 +1,4 @@
-/*.card {
-  width:18em;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-    margin: 5%;
-    min-height: 300px;
-    border:1px solid rgba(0, 0, 0, .5);
-     
 
-}*/
 body{
 background: #E0EAFC;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to bottom, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
