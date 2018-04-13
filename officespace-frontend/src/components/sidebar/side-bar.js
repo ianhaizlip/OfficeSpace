@@ -3,93 +3,127 @@ import { Redirect } from 'react-router-dom';
 
 import './side-bar.css';
 
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem 
-} from 'reactstrap';
+
 
 export default class SideBar extends Component {
 
   constructor(props) {
     super(props);
 
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false
-    };
-  }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
+
+
+  this.state={showDropdownMenu: false,
+
+
+};
+
+this.showDropdownMenu = this.showDropdownMenu.bind(this);
+this.closeDropdownMenu = this.closeDropdownMenu.bind(this);
+}
+
+showDropdownMenu(event){
+  event.preventDefault();
+
+  this.setState({ showDropdownMenu: true}, () => {
+    document.addEventListener('click', this.closeDropdownMenu);
+   
+  
+});
+}
+
+
+closeDropdownMenu(event){
+  if(!this.dropdownMenu.contains(event.target)){
+    this.setState({showDropdownMenu: false}, () => {
+
+    document.addEventListener('click', this.closeDropdownMenu);
+  });
+}
+}
+
+  //   this.toggle = this.toggle.bind(this);
+  //   this.state = {
+  //     isOpen: false
+  //   };
+  // }
+  // toggle() {
+  //   this.setState({
+  //     isOpen: !this.state.isOpen
+  //   });
+  // }
 
   render() {
     return (
+<div className="content">
+      <div className="wrapper">
 
+    <nav className="sidebar">
         <div className="nav-side-menu">
        
-    <div className="brand">
-                    <img src="./img/Untitled-2.png" alt="logo" id="logo" /></div>
+   
+
     <i className="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-    <div className="menu-list">
-        <ul id="menu-content" className="menu-content collapse out">
-            <li>
-                <a href="/dashboard">
-                    <i className="fas fa-tachometer fa-lg"></i> Dashboard
-                </a>
-            </li>
+     <div className="sidebar-header">
+            <h3>Welcome Back!</h3>
+        </div>
+
+
+        <ul className="list-unstyled components">
+
+
+            <li className="active"><a href="/dashboard"> <i className="fas fa-tachometer-alt fa-lg"></i>Dashboard</a></li>
+
+
+            <li><a href="/inbox"><i className="fas fa-envelope fa-lg"></i>Inbox</a></li>
+            
+            <li><a href="/clients"><i className="fas fa-users fa-lg"></i> Manage Clients</a></li>
 
             <li>
-                <a href="/inbox">
-                    <i className="fas fa-envelope fa-lg"></i> Inbox
-                </a>
-            </li>
-             <li>
-                <a href="/clients">
-                    <i className="fas fa-users fa-lg"></i> Clients
-                </a>
-            </li>
-            <li data-toggle="collapse" data-target="#products">
-                <i className="fas fa-file fa-lg"></i> Files <span className="arrow"></span>
-            </li>
-            <ul class="sub-menu collapse" id="products">
-                <li><a href="/files/received">Received</a></li>
-                <li><a href="/files/sent">Sent</a></li>
-                <li><a href="/files/new-file">New File</a></li>
-            </ul>
-           
-                 </ul>
-                  <li>
-                <a href="/">
-                    <i className="fas fa-power-off fa-lg"></i> Sign out
-                </a>
-            </li>
-             
- 
+
+
+  <a onClick={this.showDropdownMenu} className="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <i className="fas fa-file fa-lg"></i>Manage Files
+  </a>
+{
+  this.state.showDropdownMenu
+  ? (
+
+  <div className="dropdownMenu dropdown-menu-right" ref={(element) => {
+    this.dropdownMenu = element;
+  }}
+  >
+    <a className="dropdown-item" href="/files/received">Received</a>
+       
+    <a className="dropdown-item" href="/files/sent">Sent</a>
+    <a className="dropdown-item" href="/files/new-file">Send File</a>
+
+
+    
 </div>
-</div>
-
-
-
-
-
-
-
-
-
-
 )
-    }
-};
+: (
+null
+)
+}
+  </li>
+ <li><a href="/"><i className="fas fa-power-off fa-lg" id="icons"></i>Sign Out</a></li>
+           
+          
+     </ul>
+   </div>
+ </nav>
 
+
+    </div>
+  </div>   
+   
+
+
+     
+     
+    )
+  }
+
+  
+};
 
