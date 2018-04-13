@@ -8,7 +8,7 @@ import axios from 'axios';
 
 import logo from "./logo.svg";
 import "./App.css";
-import LoginPage from "./pages/login-page";
+import LoginPage from "./pages/Home/login-page";
 import { Button } from 'reactstrap';
 import SideBar from './components/sidebar/side-bar';
 
@@ -87,14 +87,14 @@ class App extends Component {
           <div>
             <Switch>
               <Route path='/' component={LoginPage} exact />
-              <Route path="/user/:username" render={(props) => {
+              {/* <Route path="/user/:username" render={(props) => {
                 console.log(this.state.user.LoggedIn, "this is in path for /profiles")
                 return this.state.user.loggedIn ? (
                   <Profile {...props} />
                 ) : (
                     <Redirect to="/login" />
                   )
-              }} />
+              }} /> */}
               <Route path='/dashboard' component={SideBar} exact />
               {/* <Route path='/inbox' component={} exact /> */}
               {/* <Route path='/clients' component={} exact /> */}
