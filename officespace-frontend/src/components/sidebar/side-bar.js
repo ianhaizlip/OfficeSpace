@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Redirect } from 'react-router-dom';
 
 import './side-bar.css';
 
@@ -15,14 +16,6 @@ import {
   DropdownMenu,
   DropdownItem 
 } from 'reactstrap';
-
-
-
-
-
-
-
-
 
 export default class SideBar extends Component {
 
@@ -42,9 +35,6 @@ export default class SideBar extends Component {
 
   render() {
     return (
-      
-       
-
 
         <div className="nav-side-menu">
        
@@ -54,32 +44,33 @@ export default class SideBar extends Component {
     <div className="menu-list">
         <ul id="menu-content" className="menu-content collapse out">
             <li>
-                <a href="#">
+                <a href="/dashboard">
                     <i className="fas fa-tachometer fa-lg"></i> Dashboard
                 </a>
             </li>
+
             <li>
-                <a href="#">
+                <a href="/inbox">
                     <i className="fas fa-envelope fa-lg"></i> Inbox
                 </a>
             </li>
              <li>
-                <a href="#">
+                <a href="/clients">
                     <i className="fas fa-users fa-lg"></i> Clients
                 </a>
             </li>
-            <li data-toggle="collapse" data-target="#products" class="collapsed active">
-                <a href="#"><i className="fas fa-file fa-lg"></i> Files <span className="arrow"></span></a>
+            <li data-toggle="collapse" data-target="#products">
+                <i className="fas fa-file fa-lg"></i> Files <span className="arrow"></span>
             </li>
             <ul class="sub-menu collapse" id="products">
-                <li><a href="#">Received</a></li>
-                <li><a href="#">Sent</a></li>
-                <li><a href="#">New File</a></li>
+                <li><a href="/files/received">Received</a></li>
+                <li><a href="/files/sent">Sent</a></li>
+                <li><a href="/files/new-file">New File</a></li>
             </ul>
            
                  </ul>
                   <li>
-                <a href="#">
+                <a href="/">
                     <i className="fas fa-power-off fa-lg"></i> Sign out
                 </a>
             </li>

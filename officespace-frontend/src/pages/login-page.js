@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import "./login-page.css";
 
 
@@ -66,7 +67,7 @@ export default class LoginPage extends Component {
        
           <Input type="password" className="form-control" id="inputTextPassword" placeholder="Password" />
         </div>
-          <button className="btn btn">Login</button>
+          <Link to ={`/dashboard`}><button className="btn btn">Login</button></Link>
           <p>Forgot Password</p>
           	</div>
      	</div>
