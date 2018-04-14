@@ -12,7 +12,7 @@ import LoginPage from './pages/Home/login-page';
 import Footer from './components/footer/footer';
 import SideBar from './components/sidebar/side-bar';
 import CalendarCard from './components/calendar/calendar';
-
+import UserForm from './components/form';
 
 class App extends Component {
   state = {
