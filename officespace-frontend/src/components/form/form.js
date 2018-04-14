@@ -148,6 +148,7 @@ onClickSubmitForm(event)
 	render()
 	{
 		return(
+			<div className="card">
 			<div className="user-form shadow">
 			<p className="font-form paragraph-header">Clients</p>
 			<div className="form-group">
@@ -172,8 +173,8 @@ onClickSubmitForm(event)
                     <input onKeyUp={this.onKeyUpInputTextBucket} type="text" className="form-control" id="inputTextBucket" placeholder="Bucket"/>
                 </div>
 				 <div className="form-group">
-                    <label htmlFor="inputTextImgUrl">imgUrl</label>
-                    <input onKeyUp={this.onKeyUpInputTextImgUrl} type="text" className="form-control" id="inputTextImgUrl" placeholder="imgUrl"/>
+                    <label htmlFor="inputTextImgUrl">Image URL</label>
+                    <input onKeyUp={this.onKeyUpInputTextImgUrl} type="text" className="form-control" id="inputTextImgUrl" placeholder="URL"/>
                 </div>
 
                  <div className="form-group">
@@ -187,21 +188,21 @@ onClickSubmitForm(event)
                     <input onKeyUp={this.onKeyUpInputTextUpdatedAt} type="text" className="form-control" id="inputTextUpdatedAt" placeholder="Updated at"/>
                 </div>
 
-
-<div className="form-group">
+  					<div className="form-group">
                     <label htmlFor="inputSelectRegion">Region</label>
                     <select onChange={this.onChangeInputSelectRegion} className="form-control" 
-                    id="inputSelectRegion">
-           
-  					<option value="option">Pick me</option>
- 					<option value="option">Pick me</option>
- 					 <option value="option">Pick me</option>
- 					 <option value="option">Pick me</option>
- 				     <option value="option">Pick me</option>
- 					 <option value="option">Pick me</option>
- 					 <option value="option">Pick me</option>
- 					<option value="option">Pick me</option>
- 					 <option value="option">Pick me</option>
+                    id="inputSelectRegion" >
+
+
+                    <option value="option">Select Region</option>
+  					<option value="option">US-East-1 (Ohio)</option>
+ 					<option value="option">US-East-2 (N. Virginia)</option>
+ 					 <option value="option">US-West-1 (Oregon)</option>
+ 					 <option value="option">US-West-2 (N. California)</option>
+ 					 <option value="option">EU-West-1 (Ireland)</option>
+ 					<option value="option">EU-West-2 (London)</option>
+ 					 <option value="option">EU-West-3 (Paris)</option>
+
 
 		
 				</select>
@@ -209,7 +210,8 @@ onClickSubmitForm(event)
 						</div>		 
 
 
-						 
+
+				 
 
 		  <button onClick={this.onClickSubmitForm}  className="btn btn-info w-10">Submit</button>
  			
@@ -217,7 +219,7 @@ onClickSubmitForm(event)
 
                 </div>
 
- 
+	 </div>	
 
 			
 			);
