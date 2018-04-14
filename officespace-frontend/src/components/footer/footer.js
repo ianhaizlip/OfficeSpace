@@ -19,8 +19,8 @@ class Footer extends Component {
 
 
 
-    <div className="footer-copyright py-3 text-center" id="footer">
-        OfficeSpace © 2018 Copyright:
+    <div className="footer-copyright py-2 text-center" id="footer">
+        OfficeSpace © 2018 Copyright
        
     </div>
 </div>

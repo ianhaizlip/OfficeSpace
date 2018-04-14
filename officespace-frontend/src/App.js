@@ -11,7 +11,7 @@ import "./App.css";
 import LoginPage from './pages/Home/login-page';
 import Footer from './components/footer/footer';
 import SideBar from './components/sidebar/side-bar';
-
+import CalendarCard from './components/calendar/calendar';
 
 
 class App extends Component {
