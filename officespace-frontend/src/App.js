@@ -8,8 +8,8 @@ import axios from 'axios';
 
 import logo from "./logo.svg";
 import "./App.css";
-import LoginPage from "./pages/Home/login-page";
-import { Button } from 'reactstrap';
+import LoginPage from './pages/Home/login-page';
+import Footer from './components/footer/footer';
 import SideBar from './components/sidebar/side-bar';
 
 
@@ -102,12 +102,14 @@ class App extends Component {
               {/* <Route path='/signup' component={SignUp} exact/> */}
               {/* <Route path='/client/:user/:bucket' component={UserProfile}/> */}
               {/* <Route component={PageNotFound}/> */}
+      
+              
             </Switch>
+
           </div>
         </Router>
-          
+      
         </div>
-       
    
     );
   }
