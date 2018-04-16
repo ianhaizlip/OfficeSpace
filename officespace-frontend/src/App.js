@@ -13,6 +13,9 @@ import Footer from './components/footer/footer';
 import SideBar from './components/sidebar/side-bar';
 import CalendarCard from './components/calendar/calendar';
 import UserForm from './components/form';
+import { Container, Row, Col } from 'reactstrap';
+import CompanyCards from './components/card/card';
+import NotFound from './components/not-found/not-found';
 
 class App extends Component {
   state = {
