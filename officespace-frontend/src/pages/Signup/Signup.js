@@ -24,7 +24,7 @@ class Signup extends Component {
 
   render() {
     if(this.state.redirect){
-      return <Redirect to={`/user/${this.props.userInfo.username}`} />
+      return <Redirect to={`/dashboard/${this.props.userInfo.username}`} />
     }
     return (
       <div>

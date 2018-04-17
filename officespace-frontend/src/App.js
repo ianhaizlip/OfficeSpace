@@ -8,11 +8,11 @@ import axios from 'axios';
 
 import logo from "./logo.svg";
 import "./App.css";
-import LoginPage from './pages/Home/login-page';
+import Login from './pages/Home/login-page';
 import Footer from './components/footer/footer';
 import SideBar from './components/sidebar/side-bar';
 import CalendarCard from './components/calendar/calendar';
-import UserForm from './components/form';
+import UserForm from './components/form/form';
 import { Container, Row, Col } from 'reactstrap';
 import CompanyCards from './components/card/card';
 import NotFound from './components/not-found/not-found';
@@ -56,13 +56,13 @@ class App extends Component {
     })
   }
 
-  userDidLogin = (userData, cb) => {
+  userDidLogin = (userData) => {
     console.log(userData)
-    axios.post("/api/login", userData).then((res) => {
-      console.log(res)
-      this.checkLogin(cb)
-      return <Redirect to={`/user/${this.state.user.username}`} />
-    })
+    // axios.post("/api/login", userData).then((res) => {
+    //   console.log(res)
+    //   this.checkLogin(cb)
+    //   return <Redirect to={`/dashboard/${this.state.user.username}`} />
+    // })
   }
   userDidSignup = (userData, cb) => {
     console.log(userData)
@@ -89,7 +89,9 @@ class App extends Component {
         <Router>
           <div>
             <Switch>
-              <Route path='/' component={LoginPage} exact />
+              <Route path='/' render={(props) => (
+                <Login userInfo={this.state.user} {...props} handleLogin={this.userDidLogin} />
+              )} />/>
               {/* <Route path="/user/:username" render={(props) => {
                 console.log(this.state.user.LoggedIn, "this is in path for /profiles")
                 return this.state.user.loggedIn ? (

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import "./login-page.css";
 
 
@@ -39,6 +39,10 @@ export default class LoginPage extends Component {
 
   
   render() {
+    if (this.state.redirect) {
+      return <Redirect to={`/dashboard/${this.props.userInfo.username}`} />;
+    }
+
     return (
 
 	 // <div className = "col-sm-8"> 
@@ -59,15 +63,19 @@ export default class LoginPage extends Component {
 
         <div className="form-group">
          
-          <Input type="email" className="form-control" id="inputTextEmail" placeholder="Email" />
+                  <Input type="email" className="form-control" id="inputTextEmail" placeholder="Email" onChange={this.handleChange}/>
         </div>
     	<div className = "row"> 
         <div className="col-sm-12">
        <div className="form-group">
        
-          <Input type="password" className="form-control" id="inputTextPassword" placeholder="Password" />
+                      <Input type="password" className="form-control" id="inputTextPassword" placeholder="Password" onChange={this.handleChange} />
         </div>
-          <Link to ={`/dashboard`}><button className="btn btn">Login</button></Link>
+                    <Link to={`/dashboard`}><button className="btn btn" onClick={() => {
+                      this.props.handleLogin(this.state, () => {
+                        this.setState({ redirect: true });
+                      })
+                    }}>Login</button></Link>
           <p>Forgot Password</p>
           	</div>
      	</div>
