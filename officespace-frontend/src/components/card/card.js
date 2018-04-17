@@ -18,7 +18,7 @@ class CompanyCards extends Component{
         website: "https://www.nps.gov/index.htm"
       },
       {
-        image:"https://res.cloudinary.com/teepublic/image/private/s--CRXh-0NK--/t_Preview/b_rgb:ffffff,c_limit,f_jpg,h_630,q_90,w_630/v1504047654/production/designs/1859161_1.jpg",
+        image:"https://www.interiorsplash.com/hs-fs/hubfs/initech.png?t=1479303225000&width=559&name=initech.png",
          name: "iniTECH",
         description: "At iniTECH we are dedicated to help customers by developing, implementing, and supporting custom process automation and information integration solutions. IniTECH has been serving the Flavor and fragrance industry for more than 12 years with experience of over 150 man-years. We have a unique combination of Engineers, Consultants, and programmers with the in-depth knowledge required for successful completion of your automation challenge.",
         website: "http://initechinfo.com/"
@@ -35,17 +35,15 @@ class CompanyCards extends Component{
   render(){
 let peopleCards = this.state.people.map(person =>{
   return(
-    <Col sm="5">
+   
     <PeopleCard person={person} />
-    </Col>
+    
     )
 })
   return (
-    <Container fluid>
-    <Row>
+   <CardDeck>
     {peopleCards}
-    </Row>
-    </Container>
+    </CardDeck>
     )
 }
 }

@@ -10,17 +10,22 @@ class PeopleCard extends Component {
   render () {
     let { id, name, company, description } = this.props.person;
     return (
-      <div style={{marginTop:"-200px", minHeight: "100vh", padding:"30px"}}>
-        <Card style={{backgroundColor:"#F5F7FA", width:"100%",   height:"100%", marginLeft: "150px", padding:"0px"}}>
-          <CardImg top width="100%" src={this.props.person.image} style={{height:"100%", width: "140px", marginLeft:"100px", paddingTop:"40px"}} alt="Card image cap" />
-          <CardBlock style={{backgroundColor:"white", marginTop: "80px", width:"100%"}}>
+      <div style={{width:"70%", height:"10%", marginLeft:"300px", paddingBottom:"10px"}}>
+   
+    
+        <Card style={{backgroundColor:"#F5F7FA", width:"100%",   height:"15%", marginLeft: "-1px", marginTop:"-1px"}}>
+          <CardImg top  src={this.props.person.image} style={{ width:"85px", height:"100px", marginLeft:"100px", paddingBottom:"15px", paddingTop:"10px"}} alt="Card image cap" />
+          <CardBody style={{backgroundColor:"white"}}>
             <CardTitle>{this.props.person.name}</CardTitle>
             <CardSubtitle>{this.props.person.company}</CardSubtitle>
             <CardText>{this.props.person.description}</CardText>
             <CardText>{this.props.person.website}</CardText>
-            <Button style={{backgroundColor:"#e37222", marginTop:"10px"}} onClick={() => this.props.removePerson(id)}>Delete</Button>
-          </CardBlock>
+          </CardBody>
         </Card>
+ 
+
+    
+ 
       </div>
     )
   }
