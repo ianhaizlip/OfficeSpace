@@ -1,277 +1,260 @@
- import React, { Component } from 'react';
-import { Card, CardTitle, CardBody } from 'reactstrap';
+import React, { Component } from 'react';
 
-import { Table } from 'reactstrap';
+import {Container, Row, Col, Card, CardTitle, CardBody} from 'reactstrap';
+import _ from "lodash";
+import {makeData} from "./utils";
 
-import { Button, ButtonGroup } from 'reactstrap';
+import ReactTable from "react-table";
+import "react-table/react-table.css";
+const rawData = makeData();
 
-const columns = [{
-  dataField: 'id',
-  text: 'File'
-}, {
-  dataField: 'name',
-  text: 'Company Name'
-}, {
-  dataField: 'date',
-  text: 'File Date'
-}];
+const requestData = (pageSize, page, sorted, filtered) => {
+  return new Promise((resolve, reject) => {
+    let filteredData = rawData;
 
-const selectRowProp = {
-  mode: 'checkbox'
+    if (filtered.length) {
+      filteredData = filtered.reduce((filteredSoFar, nextFilter) => {
+        return filteredSoFar.filter(row => {
+          return (row[nextFilter.id] + "").includes(nextFilter.value);
+        });
+      }, filteredData);
+    }
+    const sortedData = _.orderBy(
+      filteredData,
+      sorted.map(sort => {
+        return row => {
+          if (row[sort.id] === null || row[sort.id] === undefined) {
+            return -Infinity;
+          }
+          return typeof row[sort.id] === "string"
+            ? row[sort.id].toLowerCase()
+            : row[sort.id];
+        };
+      }),
+      sorted.map(d => (d.desc ? "desc" : "asc"))
+    );
+
+    const res = {
+      rows: sortedData.slice(pageSize * page, pageSize * page + pageSize),
+      pages: Math.ceil(filteredData.length / pageSize)
+    };
+
+    setTimeout(() => resolve(res), 500);
+  });
 };
 
 
-
-  
-export default class FileTable extends Component {
-  constructor (props) {
+class FileTable extends Component {
+  constructor(props) {
     super(props);
-    this.state={
-      data:data
-    }
+    this.state = {
+      
+      pages: null,
+      loading: true,
 
-    this.sortBy = this.sortBy.bind(this)
-  }
-  sortBy(key){
-    this.setState((
-      data: data.sort((a, b) => a < b)
-      ))
-    this.state = { cSelected: [] };
+      selected:{},
+      selectAll: 0,
+     data:[],
+       };
+       this.toggleRow=this.toggleRow.bind(this);
+           this.fetchData = this.fetchData.bind(this);
 
-     this.onCheckboxBtnClick.bind(this);
-  }
-  }
-
-
-
-  onCheckboxBtnClick(selected) {
-    const index = this.state.cSelected.indexOf(selected);
-    if (index < 0) {
-      this.state.cSelected.push(selected);
-    } else {
-      this.state.cSelected.splice(index, 1);
-    }
-    this.setState({ cSelected: [...this.state.cSelected] });
+     
+     
+    
   }
 
-  handleInputChange(event) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
 
+  toggleRow(companyName){
+    const newSelected = Object.assign({}, this.state.selected);
+    newSelected[companyName]= !this.state.selected[companyName];
     this.setState({
-      [name]: value
+      selected: newSelected,
+      selectAll: 2
     });
   }
 
+  toggleSelectAll(){
+    let newSelected ={};
 
+    if(this.state.selectAll === 0){
+      this.state.data.forEach(x =>{
+        newSelected[x.companyName] = true;
+      });
+    }
+    this.setState({
+      selected: newSelected,
+      selectAll: this.state.selectAll === 0 ? 1 : 0
+    });
+  }
 
-  render() {
-    return (
+toggleSelected(){
+  let newSelected={};
 
-      <Table hover bordered style={{width:"900px", marginLeft:"300px"}}>
+  if(this.state.selected === 0){
+    this.state.data.forEach(x => {
+      newSelected[x.companyName] === true;
+    });
+  }
+}
+  
+  fetchData(state, instance) {
+    this.setState({ loading: true });
+    requestData(
+      state.pageSize,
+      state.page,
+      state.sorted,
+      state.filtered,
 
-        <thead>Received Files
- 
-          <tr>
-         <label >
-          Select
-          
-        </label>
-            </tr>
-          <tr>
-            <th><input
-            name="File Name"
-            type="checkbox"
-            checked={this.state.isChecked}
-            onChange={this.handleInputChange} /></th>
+    
+    ).then(res => {
+
+      this.setState({
+        data: res.rows,
+        pages: res.pages,
+        loading: false,
         
-            <th>Company Name</th>
-            <th>File Name</th>
-            <th>File Received</th>
-          </tr>
-        </thead>
-        <tbody>
-        {
-          props.data.map(row =>(
-          <tr>
-          <td>{row.rank}</td>
-          <td>{row.rank}</td>
-          <td>{row.rank}</td>
-          <td>{row.rank}</td>
-          <td>{row.rank}</td>
-          </tr>
-          ))
-        }
-          <tr>
-            <th scope="row"><input
-            name="File Name"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange} /></th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row"><input
-            name="File Name"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange} /></th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row"><input
-            name="File Name"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange} /></th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row"><input
-            name="File Name"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange} /></th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row"><input
-            name="File Name"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange} /></th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row"><input
-            name="File Name"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange} /></th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-           <tr>
-            <th scope="row"><input
-            name="File Name"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange} /></th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row"><input
-            name="File Name"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange} /></th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row"><input
-            name="File Name"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange} /></th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row"><input
-            name="File Name"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange} /></th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row"><input
-            name="File Name"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange} /></th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row"><input
-            name="File Name"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange} /></th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row"><input
-            name="File Name"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange} /></th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row"><input
-            name="File Name"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange} /></th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row"><input
-            name="File Name"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange} /></th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row"><input
-            name="File Name"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange} /></th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-         
-          
-           
-        </tbody>
-      </Table>
+      });
+    });
+  }
+  render() {
+
+
+    const { data, pages, loading } = this.state;
+    const columns = [
+    {
+
+      Header: "",
+      columns:[
+      {
+        id: "checkbox",
+              accessor: "",
+              Cell: ({ original }) =>{
+                return(
+                <input
+                 type="checkbox" 
+                className="checkbox"
+                checked={this.state.selected[original. companyName] === true}
+                onChange={() => this.toggleRow(original.companyName)}
+                />
+                );
+              },
+
+             
+              Header: x =>{
+                return(
+                  <input 
+                  type="checkbox"
+                  className="checkbox"
+                  checked={this.state.selectAll === 1}
+                  ref={input => {
+                    if(input) {
+                      input.indeterminate = this.state.selectAll === 2;
+
+
+                    }
+
+                    
+                  }}
+                  onChange ={() => this.toggleSelectAll()}
+
+                 /> 
+                  );
+              },
+              sortable: false,
+              width: 45
+            },
+
+
      
+            {
+
+            
+              Header: "Company Name",
+              accessor: "companyName"
+            },
+
+  
+    {
+              Header: "File Name",
+              id: "fileName",
+              accessor: d => d.fileName
+            },
+      {
+        Header: "Date",
+        accessor: "Date"
+      }
+      
+    
+    ]
+  }
+  ];
+
+
+            
+           
+         
+    return (
+     <Container fluid>
+      <Row gutter={16}>
+      <Col md={4} lg={4} xs={4}/>
+      <Card style={{height:"100%", width:"60%", marginTop:"-50px", marginBottom:"-150px"}}> 
+
+      <CardTitle>Received Files</CardTitle>
+      <CardBody style={{backgroundColor:"#E0DFE9"}}>
+      <div style={{width:"100%", backgroundColor:"white"}}>
+      
+        <ReactTable
+        manual
+        data={this.state.data}
+        columns={columns}
+                  defaultPageSize={5}
+                   loading={loading} 
+          onFetchData={this.fetchData} 
+          filterable
+          className="-striped -highlight"
+        defaultSorted={[{ id: "companyName", desc: false}]}
+        />
+        </div>
+        
+        <br />
+         
+      
+      </CardBody>
+     </Card>
+     </Row>
+          <Row gutter={24}>
+
+
+    <Card style={{height:"100%", width:"60%"}}> 
+
+      <CardTitle>Sent Files</CardTitle>
+      <CardBody style={{backgroundColor:"#E0DFE9"}}>
+      <div style={{width:"100%", backgroundColor:"white"}}>
+      
+        <ReactTable
+
+      data={this.state.data}
+        columns={columns}
+          defaultPageSize={5}
+          loading={loading} 
+          onFetchData={this.fetchData} 
+          filterable
+          className="-striped -highlight"
+        defaultSorted={[{ id: "companyName", desc: false}]}
+        />
+         
+      </div>
+      </CardBody>
+     </Card>
+    </Row>
+    </Container>
+    
+
     );
   }
 }
 
 
 
+export default FileTable;
