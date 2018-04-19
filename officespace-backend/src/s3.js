@@ -8,8 +8,6 @@ export default class S3{
 
     }
 
-
-
     getObject(file){
         const s3 = this.app.s3;
 
@@ -19,9 +17,6 @@ export default class S3{
         };
 
        return s3.getObject(options).createReadStream();
-
-
-
 
     }
     download(file){

@@ -3,11 +3,9 @@ import _ from 'lodash'
 
 export default class Auth {
 
-
 	constructor(app){
 
 		this.app = app;
-
 
 		this.createToken = this.createToken.bind(this);
 
@@ -15,15 +13,11 @@ export default class Auth {
 			userId: null,
 			expire: null,
 		}
-
-
 	}
-
 
 	createToken(user, expire = null, cb = () => {}){
 
 		let model = this.model;
-
 
 		const db = this.app.db;
 
@@ -32,9 +26,7 @@ export default class Auth {
 
 		db.collection('tokens').insertOne(model, (err, token) => {
 			return cb(err, model);
-
 		});
-
 
 	}
 
@@ -45,7 +37,6 @@ export default class Auth {
 		if(!token){
 			return cb(false);
 		}
-
 
 		const db = this.app.db;
 
@@ -61,16 +52,7 @@ export default class Auth {
 				return cb(true);
 			}
 
-			return cb(false);
-			
-
+			return cb(false);	
 		});
-
-		
 	}
-
-
-
-
-
 }

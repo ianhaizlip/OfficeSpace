@@ -15,7 +15,7 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
   
 
 
-export default class LoginPage extends Component {
+export default class Login extends Component {
      constructor(props) {
     super(props);
 

@@ -7,31 +7,25 @@ const saltRounds = 10;
 
 export default class User{
 
-
-
 	constructor(app){
 
 		this.app = app;
 
-
-
 		this.model = {
-			name: null,
+			username: null,
 			email: null,
 			password: null,
+			bucket: null,
 			created: new Date(),
 			updated: null,
 		}
-
 
 		this.findUserByEmail = this.findUserByEmail.bind(this);
 		this.login = this.login.bind(this);
 		this.findById = this.findById.bind(this);
 	}
 
-
 	findById(id = null, cb = () => {}){
-
 
 		const db = this.app.db;
 
@@ -69,14 +63,9 @@ export default class User{
 
 		this.findUserByEmail(email, (err, user) => {
 
-
 			if(err === null && user){
 
-			
-
 				const passwordCheck = bcrypt.compareSync(password, user.password); // false
-
-			
 
 				if(passwordCheck){
 
@@ -85,9 +74,6 @@ export default class User{
 
 
 					auth.createToken(user, null, (err, token) => {
-
-
-				
 
 						if(err){
 
@@ -98,20 +84,14 @@ export default class User{
 						delete user.password;
 						token.user = user;
 						return cb(null, token);
-
 					});
-
-
-					
+		
 				}else{
 
 					error = {message: "Password does not match."};
 
 					return cb(error, null);
-
 				}
-
-				
 
 			}
 			if(err || !user){
@@ -120,13 +100,8 @@ export default class User{
 				return cb(error, null);
 			}
 
-
-
-
-
 		});
 
-		
 	}
 
 	initWithObject(obj){
@@ -134,9 +109,7 @@ export default class User{
 		this.model.name = _.trim(_.get(obj, 'name', null));
 		this.model.email = _.toLower(_.trim(_.get(obj, 'email', null)));
 		this.model.password = _.get(obj, 'password', null);
-
-
-
+		this.model.bucket = _.trim(_.get(obj, 'bucket', null));
 
 		return this;
 	}
@@ -158,10 +131,6 @@ export default class User{
 			});
 		}
 
-		
-
-		
-
 		this.findUserByEmail(model.email, (err, user) => {
 
 
@@ -173,9 +142,6 @@ export default class User{
 
 			return cb(errors);
 		});
-
-
-
 	}
 
 	findUserByEmail(email = null, cb = () => {}){
@@ -188,8 +154,6 @@ export default class User{
 		db.collection('users').find(query).limit(1).toArray((err, result) => {
 			return cb(err, _.get(result, '[0]', null));
 		}); 
-
-
 	}
 	create(cb){
 
@@ -200,8 +164,6 @@ export default class User{
 		model.password = hashPassword;
 		
 		this.validate((errors) => {
-
-
 
 			let messages = [];
 
@@ -219,12 +181,6 @@ export default class User{
 			db.collection('users').insertOne(model, (err, result) => {
 					return cb(err, model);
 			});
-
 		});
-
-
-		
-
 	}
-
 }

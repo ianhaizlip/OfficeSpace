@@ -25,5 +25,5 @@ var s3Config = exports.s3Config = {
 };
 
 var s3Region = exports.s3Region = 'us-west-2';
-var s3Bucket = exports.s3Bucket = 'fileapp';
+var s3Bucket = exports.s3Bucket = 'OfficeSpace';
 //# sourceMappingURL=config.js.map

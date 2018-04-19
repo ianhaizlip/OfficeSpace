@@ -243,34 +243,34 @@ class AppRouter {
         });
 
 
-        // Login user 
+        // // Login user 
 
-        app.post('/api/users/login', (req, res, next) => {
+        // app.post('/api/login', (req, res, next) => {
 
-            const body = _.get(req, 'body', {});
+        //     const body = _.get(req, 'body', {});
 
-            const user = new User(app);
+        //     const user = new User(app);
 
-            const email = _.get(body, 'email');
-            const password = _.get(body, 'password');
+        //     const email = _.get(body, 'email');
+        //     const password = _.get(body, 'password');
 
 
-            user.login(email, password, (err, token) => {
+        //     user.login(email, password, (err, token) => {
 
-                    if(err){
+        //             if(err){
 
-                        return res.status(401).json({
-                            message: "An error login your account. Please try again!"
-                        });
-                    }
+        //                 return res.status(401).json({
+        //                     message: "An error login your account. Please try again!"
+        //                 });
+        //             }
 
-                    return res.status(200).json(token);
-            });
+        //             return res.status(200).json(token);
+        //     });
 
 
             
 
-        });
+        // });
 
         // get my profile detail
         app.get('/api/users/:id', (req, res, next) => {

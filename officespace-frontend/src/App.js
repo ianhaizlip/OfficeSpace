@@ -18,6 +18,7 @@ import { Container, Row, Col } from 'reactstrap';
 import CompanyCards from './components/card/card';
 import NotFound from './components/not-found/not-found';
 
+
 class App extends Component {
   state = {
     user: {
@@ -25,6 +26,7 @@ class App extends Component {
       name: '',
       username: '',
       email: '',
+      bucket: '',
       profilePic: null,
       loggedIn: false,
       isAdmin: false
@@ -58,12 +60,12 @@ class App extends Component {
   }
 
   userDidLogin = (userData) => {
-    console.log(userData)
-    // axios.post("/api/login", userData).then((res) => {
-    //   console.log(res)
-    //   this.checkLogin(cb)
-    //   return <Redirect to={`/dashboard/${this.state.user.username}`} />
-    // })
+    console.log(this.state)
+    axios.post("/api/login", userData).then((res, cb) => {
+      console.log(userData)
+      this.checkLogin(userData)
+      return <Redirect to={`/dashboard/${this.state.user.username}`} />
+    })
   }
   userDidSignup = (userData, cb) => {
     console.log(userData)
@@ -105,7 +107,7 @@ class App extends Component {
               {/* <Route path='/inbox' component={} exact /> */}
               {/* <Route path='/clients' component={} exact /> */}
               {/* <Route path='/login' component={Form} exact /> */}
-              <Route path='/signup' component={Signup} exact/>
+              <Route path='/signup' component={UserForm} exact {...this.props}/>
               {/* <Route path='/client/:user/:bucket' component={UserProfile}/> */}
               <Route component={NotFound}/>
       

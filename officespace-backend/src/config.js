@@ -20,4 +20,4 @@ export const s3Config = {
 
 
 export const s3Region = 'us-west-2'
-export const s3Bucket = 'fileapp'
+export const s3Bucket = 'OfficeSpace'

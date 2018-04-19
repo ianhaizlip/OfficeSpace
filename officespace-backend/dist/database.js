@@ -7,7 +7,7 @@ exports.connect = undefined;
 
 var _mongodb = require('mongodb');
 
-var url = 'mongodb://localhost:27017/OfficeSpace';
+var url = 'mongodb://localhost/OfficeSpace';
 
 var connect = exports.connect = function connect(callback) {
 
