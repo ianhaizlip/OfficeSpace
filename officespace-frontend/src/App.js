@@ -91,7 +91,7 @@ class App extends Component {
             <Switch>
               <Route path='/' render={(props) => (
                 <Login userInfo={this.state.user} {...props} handleLogin={this.userDidLogin} />
-              )} />/>
+              )} exact/>/>
               {/* <Route path="/user/:username" render={(props) => {
                 console.log(this.state.user.LoggedIn, "this is in path for /profiles")
                 return this.state.user.loggedIn ? (

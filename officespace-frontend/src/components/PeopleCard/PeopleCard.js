@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBlock,
-  CardTitle, CardSubtitle, Button } from 'reactstrap';
+  CardTitle, CardSubtitle, Button, CardBody } from 'reactstrap';
 
 class PeopleCard extends Component {
 	
