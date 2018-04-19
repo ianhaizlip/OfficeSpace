@@ -89,9 +89,14 @@ class App extends Component {
         <Router>
           <div>
             <Switch>
+<<<<<<< HEAD
               <Route path='/' exact render={(props) => (
+=======
+            <Route path='/' component={UserForm} exact/>
+              {/* <Route path='/' exact render={(props) => (
+>>>>>>> Josh
                 <Login userInfo={this.state.user} {...props} handleLogin={this.userDidLogin} />
-              )} />/>
+              )}/> */}
               {/* <Route path="/user/:username" render={(props) => {
                 console.log(this.state.user.LoggedIn, "this is in path for /profiles")
                 return this.state.user.loggedIn ? (

@@ -23,13 +23,17 @@ AWS.config.region = s3Region ;
 
 const s3 = new AWS.S3();
 
+
+
 // Setup Email
 
 let email = nodemailer.createTransport(smtp);
 
+
 // File storage config
 
 const storageDir = path.join(__dirname, '..', 'storage');
+
 
 //const upload = multer({ storage: storageConfig }); // local upload.
 
@@ -46,6 +50,8 @@ const upload = multer({
         }
     })
 })
+
+
 
 // End file storage config
 
@@ -68,7 +74,6 @@ function userSetup(req, res, next) {
             name: '',
             username: '',
             email: '',
-            bucket: '',
             profilePic: null,
             loggedIn: false,
             isAdmin: false
