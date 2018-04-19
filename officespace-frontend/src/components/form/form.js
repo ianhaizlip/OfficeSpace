@@ -137,6 +137,7 @@ this.setState({user});
 
 onClickSubmitForm(event)
 {
+	console.log("trying");
 	const user={
 		...this.state.user,
 		submit:event.target.value

@@ -52,7 +52,7 @@ export default class User{
 			return cb(error, null);
 		})
 	}
-	login(email, password, callback = () => {}){
+	login(email, password, cb = () => {}){
 
 		const app = this.app;
 
@@ -64,7 +64,7 @@ export default class User{
 		if(!email || !password){
 
 			error = {message: "Email or password is required."};
-			return callback(error, null);
+			return cb(error, null);
 		}
 
 		this.findUserByEmail(email, (err, user) => {
@@ -97,7 +97,7 @@ export default class User{
 
 						delete user.password;
 						token.user = user;
-						return callback(null, token);
+						return cb(null, token);
 
 					});
 
@@ -107,7 +107,7 @@ export default class User{
 
 					error = {message: "Password does not match."};
 
-					return callback(error, null);
+					return cb(error, null);
 
 				}
 
@@ -117,7 +117,7 @@ export default class User{
 			if(err || !user){
 				error = {message: "An error login your account"};
 
-				return callback(error, null);
+				return cb(error, null);
 			}
 
 
@@ -178,7 +178,7 @@ export default class User{
 
 	}
 
-	findUserByEmail(email = null, callback = () => {}){
+	findUserByEmail(email = null, cb = () => {}){
 		const db = this.app.db;
 
 		const query = {
@@ -186,7 +186,7 @@ export default class User{
 		};
 
 		db.collection('users').find(query).limit(1).toArray((err, result) => {
-			return callback(err, _.get(result, '[0]', null));
+			return cb(err, _.get(result, '[0]', null));
 		}); 
 
 

@@ -1,21 +1,60 @@
-//npm required
-const AWS = require('aws-sdk');
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const session = require('express-session');
-const path = require("path");
-const mongoose = require('mongoose');
+import http from 'http';
+import express from 'express';
+import session from 'express-session';
+import cors from 'cors';
+import morgan from 'morgan';
+import bodyParser from 'body-parser';
+import multer from 'multer'
+import path from 'path';
 
-const PORT = process.env.PORT || 3001;
+import {connect} from "./database";
+import AppRouter from './router'
+import nodemailer from 'nodemailer'
+import {smtp, s3Config, s3Region,s3Bucket} from './config'
 
-//setting up npm
+// Amazon S3 Setup
+import AWS from 'aws-sdk'
+import multerS3 from 'multer-s3'
+
+
+AWS.config.update(s3Config);
+
+AWS.config.region = s3Region ;
+
+const s3 = new AWS.S3();
+
+// Setup Email
+
+let email = nodemailer.createTransport(smtp);
+
+// File storage config
+
+const storageDir = path.join(__dirname, '..', 'storage');
+
+//const upload = multer({ storage: storageConfig }); // local upload.
+
+const upload = multer({
+    storage: multerS3({
+        s3: s3,
+        bucket: s3Bucket,
+        metadata: function (req, file, cb) {
+            cb(null, {fieldName: file.fieldname});
+        },
+        key: function (req, file, cb) {
+            const filename = `${Date.now().toString()}-${file.originalname}`;
+            cb(null, filename)
+        }
+    })
+})
+
+// End file storage config
+
+const PORT = 3000;
 const app = express();
-const port = 3000;
+app.server = http.createServer(app);
 
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
-}
+
+app.use(morgan('dev'));
 app.use(session({
     secret: process.env.SESSIONSECRET || "Coding is fun!",
     resave: false,
@@ -29,6 +68,7 @@ function userSetup(req, res, next) {
             name: '',
             username: '',
             email: '',
+            bucket: '',
             profilePic: null,
             loggedIn: false,
             isAdmin: false
@@ -39,29 +79,44 @@ function userSetup(req, res, next) {
 
 app.use(userSetup);
 
-app.use(cors());
+app.use(cors({
+    exposedHeaders: "*"
+}));
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.text());
-app.use(bodyParser.json({ type: "application/vnd.api+json" }));
-
-require('./routes/rds-routes.js')(app);
+app.use(bodyParser.json({
+    limit: '50mb'
+}));
 
 
-mongoose.connect('mongodb://localhost/users').then(()=>{
-    console.log('connected to mongodb');
-    app.listen(port, (err)=>{
-        if(err){
-            console.log('server.js issue, server isnt listening');
-        }
-        else{
-            console.log('server lisenting on port: ', port);
-        }
+app.set('root', __dirname);
+app.set('storageDir', storageDir);
+app.upload = upload;
+app.email = email;
+app.s3 = s3;
+
+//Connect to the database.
+
+connect((err, db) => {
+
+    if(err){
+        console.log("An error connecting to the database", err);
+        throw (err);
+    }
+
+    app.db = db;
+    app.set('db', db);
+
+
+    // init routers.
+    new AppRouter(app);
+
+
+    app.server.listen(process.env.PORT || PORT, () => {
+        console.log(`App is running on port ${app.server.address().port}`);
     });
-}, (err)=>{
-    console.log('error occured connecting to server: ', err);
+
 });
 
 
 
+export default app;
