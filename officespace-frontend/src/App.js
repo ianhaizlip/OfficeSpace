@@ -88,7 +88,7 @@ class App extends Component {
         <Router>
           <div>
             <Switch>
-            <Route path='/' component={UserForm} exact/>
+            <Route path='/' component={Login} exact/>
               {/* <Route path='/' exact render={(props) => (
                 <Login userInfo={this.state.user} {...props} handleLogin={this.userDidLogin} />
               )}/> */}
