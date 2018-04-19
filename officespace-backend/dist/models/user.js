@@ -74,7 +74,7 @@ var User = function () {
 		}, {
 				key: 'login',
 				value: function login(email, password) {
-						var callback = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : function () {};
+						var cb = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : function () {};
 
 
 						var app = this.app;
@@ -87,7 +87,7 @@ var User = function () {
 						if (!email || !password) {
 
 								error = { message: "Email or password is required." };
-								return callback(error, null);
+								return cb(error, null);
 						}
 
 						this.findUserByEmail(email, function (err, user) {
@@ -112,19 +112,19 @@ var User = function () {
 
 														delete user.password;
 														token.user = user;
-														return callback(null, token);
+														return cb(null, token);
 												});
 										} else {
 
 												error = { message: "Password does not match." };
 
-												return callback(error, null);
+												return cb(error, null);
 										}
 								}
 								if (err || !user) {
 										error = { message: "An error login your account" };
 
-										return callback(error, null);
+										return cb(error, null);
 								}
 						});
 				}
@@ -170,7 +170,7 @@ var User = function () {
 				key: 'findUserByEmail',
 				value: function findUserByEmail() {
 						var email = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-						var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {};
+						var cb = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {};
 
 						var db = this.app.db;
 
@@ -179,7 +179,7 @@ var User = function () {
 						};
 
 						db.collection('users').find(query).limit(1).toArray(function (err, result) {
-								return callback(err, _lodash2.default.get(result, '[0]', null));
+								return cb(err, _lodash2.default.get(result, '[0]', null));
 						});
 				}
 		}, {

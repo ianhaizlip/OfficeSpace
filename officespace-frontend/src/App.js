@@ -4,8 +4,6 @@ import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle} from 'reactstrap';
 import axios from 'axios';
 
-
-
 import logo from "./logo.svg";
 import "./App.css";
 import Login from './pages/Home/login-page';
@@ -24,6 +22,7 @@ class App extends Component {
       name: '',
       username: '',
       email: '',
+      bucket: '',
       profilePic: null,
       loggedIn: false,
       isAdmin: false
@@ -107,7 +106,7 @@ class App extends Component {
               {/* <Route path='/login' component={Form} exact /> */}
               {/* <Route path='/signup' component={SignUp} exact/> */}
               {/* <Route path='/client/:user/:bucket' component={UserProfile}/> */}
-              {/* <Route component={PageNotFound}/> */}
+              <Route component={NotFound}/>
       
               
             </Switch>
