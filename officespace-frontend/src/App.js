@@ -11,6 +11,7 @@ import "./App.css";
 import Login from './pages/Home/login-page';
 import Footer from './components/footer/footer';
 import SideBar from './components/sidebar/side-bar';
+import Signup from './pages/Signup/Signup';
 import CalendarCard from './components/calendar/calendar';
 import UserForm from './components/form/form';
 import { Container, Row, Col } from 'reactstrap';
@@ -89,12 +90,7 @@ class App extends Component {
         <Router>
           <div>
             <Switch>
-<<<<<<< HEAD
               <Route path='/' exact render={(props) => (
-=======
-            <Route path='/' component={UserForm} exact/>
-              {/* <Route path='/' exact render={(props) => (
->>>>>>> Josh
                 <Login userInfo={this.state.user} {...props} handleLogin={this.userDidLogin} />
               )}/> */}
               {/* <Route path="/user/:username" render={(props) => {
@@ -109,9 +105,9 @@ class App extends Component {
               {/* <Route path='/inbox' component={} exact /> */}
               {/* <Route path='/clients' component={} exact /> */}
               {/* <Route path='/login' component={Form} exact /> */}
-              {/* <Route path='/signup' component={SignUp} exact/> */}
+              <Route path='/signup' component={Signup} exact/>
               {/* <Route path='/client/:user/:bucket' component={UserProfile}/> */}
-              {/* <Route component={PageNotFound}/> */}
+              <Route component={NotFound}/>
       
               
             </Switch>

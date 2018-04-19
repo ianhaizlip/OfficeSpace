@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { Link, Redirect } from 'react-router-dom';
 import "./login-page.css";
+import classNames from 'classnames'
+import _ from 'lodash'
+import {isEmail} from '../../helpers/email'
+import {createUser, login} from '../../helpers/user'
 
 import {Container, Row, Col, Card, CardTitle, CardBody} from 'reactstrap';
 

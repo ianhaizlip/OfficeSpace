@@ -74,6 +74,7 @@ function userSetup(req, res, next) {
             name: '',
             username: '',
             email: '',
+            bucket: '',
             profilePic: null,
             loggedIn: false,
             isAdmin: false
