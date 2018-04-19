@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link, Redirect } from 'react-router-dom';
 import "./login-page.css";
 
+import {Container, Row, Col, Card, CardTitle, CardBody} from 'reactstrap';
 
   
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
@@ -47,7 +48,8 @@ export default class LoginPage extends Component {
 
 	 // <div className = "col-sm-8"> 
   //       <div className = "row"> 
-
+      <Row gutter={16}>
+      <Col md={4} lg={4} sm={4}/>
     	<div className="login-card">
 
 <div className="brand animated fadeIn">
@@ -56,34 +58,38 @@ export default class LoginPage extends Component {
     	  
     	    
 
-    	<div className = "row"> 
-        <div className="col-sm-12">
+  
+  
  <Form>
 
 
-        <div className="form-group">
+        <div className="form-group"style={{marginLeft:"15px", marginTop:"-30px"}}>
          
-                  <Input type="email" className="form-control" id="inputTextEmail" placeholder="Email" onChange={this.handleChange}/>
+                  <Input type="email" className="form-control" id="inputTextEmail" placeholder="Email" onChange={this.handleChange} style={{width:"40%"}}/>
         </div>
-    	<div className = "row"> 
-        <div className="col-sm-12">
-       <div className="form-group">
+   
+    
+       <div className="form-group" style={{marginLeft:"15px"}}>
        
-                      <Input type="password" className="form-control" id="inputTextPassword" placeholder="Password" onChange={this.handleChange} />
-        </div>
-                    <Link to={`/dashboard`}><button className="btn btn" onClick={() => {
+                      <Input type="password" className="form-control" id="inputTextPassword" placeholder="Password" onChange={this.handleChange} style={{width:"40%", marginTop:"-100px"}}/>
+       
+                    <Link to={`/dashboard`}><button className="btn btn" style={{marginTop:"-80px", width:"40%", marginLeft:"2px"}} onClick={() => {
                       this.props.handleLogin(this.state, () => {
                         this.setState({ redirect: true });
                       })
                     }}>Login</button></Link>
-          <p>Forgot Password</p>
-          	</div>
-     	</div>
-        </Form>
+          <p style={{marginTop:"-10px", marginLeft:"10px"}}>Forgot Password</p>
+        
    </div>
+        
+        </Form>
+
+   </div>
+
         </div>
-     	</div>
-     	</div>
+              </Row>
+
+     	
 // </div>
 // </div>
 
