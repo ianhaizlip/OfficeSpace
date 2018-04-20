@@ -20,12 +20,13 @@ export default class Login extends Component {
     super(props);
 
     this.state = {
-      email: "",
-      password: ""
+      username: "",
+      password: "",
+        redirect: false
     };
   }
   validateForm() {
-    return this.state.email.length > 0 && this.state.password.length > 0;
+    return this.state.username.length > 0 && this.state.password.length > 0;
   }
 
   handleChange = event => {
@@ -34,9 +35,7 @@ export default class Login extends Component {
     });
   }
 
-  handleSubmit = event => {
-    event.preventDefault();
-  }
+
 
   
 
@@ -44,8 +43,11 @@ export default class Login extends Component {
 
   
   render() {
-    if (this.state.redirect) {
-      return <Redirect to={`/dashboard/${this.props.userInfo.username}`} />;
+    if (this.state.redirect && this.props.userInfo.isAdmin) {
+      return <Redirect to={`/admin/${this.props.userInfo.username}`} />;
+    }
+    else if (this.state.redirect && !this.props.userInfo.isAdmin){
+        return <Redirect to={`/client/${this.props.userInfo.username}`} />;
     }
 
     return (

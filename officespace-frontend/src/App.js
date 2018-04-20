@@ -17,7 +17,8 @@ import UserForm from './components/form/form';
 import { Container, Row, Col } from 'reactstrap';
 import CompanyCards from './components/card/card';
 import NotFound from './components/not-found/not-found';
-
+import Admin from "./pages/Admin/Admin";
+import Client from "./pages/Client/Client";
 
 class App extends Component {
   state = {
@@ -31,15 +32,6 @@ class App extends Component {
       loggedIn: false,
       isAdmin: false
     }
-  };
-
-  onChange = updatedValue => {
-    this.setState({
-      fields: {
-        ...this.state.fields,
-        ...updatedValue
-      }
-    });
   };
 
   componentDidMount() {
@@ -67,14 +59,6 @@ class App extends Component {
       return <Redirect to={`/dashboard/${this.state.user.username}`} />
     })
   }
-  userDidSignup = (userData, cb) => {
-    console.log(userData)
-    axios.post("/api/signUp", userData).then((res) => {
-      console.log(res)
-      this.checkLogin(cb)
-      return <Redirect to="/user/" />
-    })
-  }
 
   userLogOut = (cb) => {
     axios.get("/api/logout").then((res) => {
@@ -89,20 +73,33 @@ class App extends Component {
     return (
    
         <div className="App">
+            {
+              this.state.user.loggedIn ? <SideBar userInfo={this.state.user} logout={this.userLogOut}/>
+                  : null
+            }
         <Router>
           <div>
             <Switch>
               <Route path='/' exact render={(props) => (
                 <Login userInfo={this.state.user} {...props} handleLogin={this.userDidLogin} />
               )}/> */}
-              {/* <Route path="/user/:username" render={(props) => {
-                console.log(this.state.user.LoggedIn, "this is in path for /profiles")
-                return this.state.user.loggedIn ? (
-                  <Profile {...props} />
-                ) : (
-                    <Redirect to="/login" />
+                <Route path='/admin/:username' render={(props)=> {
+                  console.log('User Logged in: ', this.state.user.loggedIn, "| User is Admin: ", this.state.user.isAdmin);
+                  return this.state.user.isAdmin ? (
+                      <Admin {...props}/>
+                  ) : (
+                      <Redirect to='/'/>
                   )
-              }} /> */}
+                }} />
+                <Route path='/client/:username' render={(props)=> {
+                    console.log('User Logged in: ', this.state.user.loggedIn, "| User is Admin: ", this.state.user.isAdmin);
+                    return !this.state.user.isAdmin ? (
+                        <Client userInfo={this.state.user} {...props}/>
+                    ) : (
+                        <Redirect to='/'/>
+                    )
+                }} />
+
               <Route path='/dashboard' component={SideBar} exact />
               {/* <Route path='/inbox' component={} exact /> */}
               {/* <Route path='/clients' component={} exact /> */}

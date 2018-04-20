@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Profile = (props) => {
+const Admin = (props) => {
   console.log(props)
   return (
-    <div>Admin view</div>
+    <div className='Admin'>Admin view</div>
   );
 };
 
-export default Profile;
+export default Admin;
