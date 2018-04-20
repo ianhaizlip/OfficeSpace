@@ -8,6 +8,9 @@ exports.connect = undefined;
 var _mongodb = require('mongodb');
 
 var url = 'mongodb://localhost/OfficeSpace';
+// for remote server
+// const url = 'mongodb://34.218.212.52/OfficeSpace'; 
+
 
 var connect = exports.connect = function connect(callback) {
 

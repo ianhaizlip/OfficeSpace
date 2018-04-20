@@ -1,7 +1,11 @@
 
- import React, { Component } from 'react';
- import {createUser, login} from '../../helpers/user'
+import React, { Component } from 'react';
+import {s3Bucket} from '../../config'
+import {createUser, login} from '../../helpers/user'
 import './form.css';
+import AWS from 'aws-sdk';
+import uuid from 'uuid';
+
 
 class UserForm extends Component
 {
@@ -25,16 +29,10 @@ class UserForm extends Component
 	};
 
 this.onKeyUpInputTextUsername = this.onKeyUpInputTextUsername.bind(this);
-
-
-
 this.onKeyUpInputTextPassword = this.onKeyUpInputTextPassword.bind(this);
 this.onKeyUpInputTextAccount = this.onKeyUpInputTextAccount.bind(this);
 this.onKeyUpInputTextEmail = this.onKeyUpInputTextEmail.bind(this);
-this.onKeyUpInputTextBucket = this.onKeyUpInputTextBucket.bind(this);
 this.onKeyUpInputTextImgUrl = this.onKeyUpInputTextImgUrl.bind(this);
-
-
 this.onChangeInputSelectRegion = this.onChangeInputSelectRegion.bind(this);
 
 
@@ -109,19 +107,19 @@ const user={
 this.setState({user});
 
 }
-onKeyUpInputTextBucket(event)
-{
+// onKeyUpInputTextBucket(event)
+// {
 
-const user={
+// const user={
 
-	...this.state.user,
+// 	...this.state.user,
 
-	bucket:event.target.value
-};
+// 	bucket:event.target.value
+// };
 
-this.setState({user});
+// this.setState({user});
 
-}
+// }
 onKeyUpInputTextImgUrl(event)
 {
 
@@ -139,10 +137,25 @@ this.setState({user});
 
 
 onClickSubmitForm(event)
-{
+{ 
+	// Create an S3 client
+	var s3 = new AWS.S3();
+	// Create a bucket and upload something into it
+	var bucketName = this.state.user.username + uuid.v4();
+	var keyName = this.state.user.username;
+
+	s3.createBucket({ Bucket: bucketName }, function () {
+		var params = { Bucket: bucketName, Key: keyName };
+		s3.putObject(params, function (err, data) {
+			if (err)
+				console.log(err)
+			else
+				console.log("Successfully uploaded data to " + bucketName + "/");
+		});
+	});
 	const user={
 		...this.state.user,
-		submit:event.target.value
+		bucket: event.target.value
 	};
 	console.log(user);
 
@@ -168,14 +181,14 @@ onClickSubmitForm(event)
                     <label htmlFor="inputTextPassword">Password</label>
                     <input onKeyUp={this.onKeyUpInputTextPassword} type="password" className="form-control" id="inputTextPassword" placeholder="Password"/>
                 </div> 
-                 {/* <div className="form-group"> */}
+                 <div className="form-group">
                     <label htmlFor="inputTextEmail">Email</label>
                     <input onKeyUp={this.onKeyUpInputTextEmail} type="text" className="form-control" id="inputTextEmail" placeholder="Email"/>
-                {/* </div> */}
-                 <div className="form-group">
+                </div>
+                 {/* <div className="form-group">
                     <label htmlFor="inputTextBucket">Bucket</label>
                     <input onKeyUp={this.onKeyUpInputTextBucket} type="text" className="form-control" id="inputTextBucket" placeholder="Bucket"/>
-                </div>
+                </div> */}
 				 <div className="form-group">
                     <label htmlFor="inputTextImgUrl">Image URL</label>
                     <input onKeyUp={this.onKeyUpInputTextImgUrl} type="text" className="form-control" id="inputTextImgUrl" placeholder="URL"/>
