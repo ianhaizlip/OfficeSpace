@@ -53,6 +53,7 @@ closeDropdownMenu(event){
   // }
 
   render() {
+    
     return (
 <div className="content">
       <div className="wrapper">
