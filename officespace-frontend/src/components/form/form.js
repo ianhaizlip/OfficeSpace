@@ -157,10 +157,9 @@ onClickSubmitForm(event)
 		...this.state.user,
 		bucket: event.target.value
 	};
-	console.log(user);
 
 	this.setState({user});
-	
+	console.log(this.state.user);
 	createUser(this.state.user).then((response) => {
 
 	console.log("Hey i got data after send post", response);

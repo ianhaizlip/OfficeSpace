@@ -131,8 +131,8 @@ var User = function () {
 	}, {
 		key: 'initWithObject',
 		value: function initWithObject(obj) {
-
-			this.model.name = _lodash2.default.trim(_lodash2.default.get(obj, 'name', null));
+			console.log("This is the object you want", obj);
+			this.model.username = _lodash2.default.trim(_lodash2.default.get(obj, 'username', null));
 			this.model.email = _lodash2.default.toLower(_lodash2.default.trim(_lodash2.default.get(obj, 'email', null)));
 			this.model.password = _lodash2.default.get(obj, 'password', null);
 			this.model.bucket = _lodash2.default.trim(_lodash2.default.get(obj, 'bucket', null));
@@ -186,6 +186,7 @@ var User = function () {
 	}, {
 		key: 'create',
 		value: function create(cb) {
+			// console.log("this is the app:", this.app);
 
 			var model = this.model;
 			var db = this.app.db;

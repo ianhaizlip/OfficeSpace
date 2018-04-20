@@ -105,8 +105,8 @@ export default class User{
 	}
 
 	initWithObject(obj){
-
-		this.model.name = _.trim(_.get(obj, 'name', null));
+		console.log("This is the object you want", obj);
+		this.model.username = _.trim(_.get(obj, 'username', null));
 		this.model.email = _.toLower(_.trim(_.get(obj, 'email', null)));
 		this.model.password = _.get(obj, 'password', null);
 		this.model.bucket = _.trim(_.get(obj, 'bucket', null));
@@ -156,6 +156,7 @@ export default class User{
 		}); 
 	}
 	create(cb){
+		// console.log("this is the app:", this.app);
 
 		let model = this.model;
 		const db = this.app.db;
