@@ -19,6 +19,7 @@ import CompanyCards from './components/card/card';
 import NotFound from './components/not-found/not-found';
 import Admin from "./pages/Admin/Admin";
 import Client from "./pages/Client/Client";
+import AdminDash from './pages/AdminDash';
 
 class App extends Component {
   state = {
@@ -113,7 +114,7 @@ class App extends Component {
 
           </div>
         </Router>
-      
+
         </div>
    
     );

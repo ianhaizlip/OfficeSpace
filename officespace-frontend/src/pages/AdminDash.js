@@ -1,8 +1,8 @@
 import React from 'react';
-import SideBar from '../sidebar/Nav';
-import Header from '../Header/Header';
-import Footer from '../footer/footer';
-import CompanyCards from '../card/card';
+import SideBar from '../components/sidebar/side-bar';
+import Header from '../components/Header/Header';
+import Footer from '../components/footer/footer';
+import CompanyCards from '../components/card/card';
 import {Col, Row, Container, Card, CardBody, CardTitle} from 'reactstrap';
 
 

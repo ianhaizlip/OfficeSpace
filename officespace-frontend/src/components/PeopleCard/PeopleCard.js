@@ -9,7 +9,6 @@ import {
   CarouselCaption
 } from 'reactstrap';
 import { Container, Row, Col } from 'reactstrap';
-import './PeopleCard.css';
 
 
 
