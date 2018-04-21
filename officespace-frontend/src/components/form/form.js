@@ -2,9 +2,13 @@
 import React, { Component } from 'react';
 import {s3Bucket} from '../../config'
 import {createUser, login} from '../../helpers/user'
-// import './form.css';
-// import AWS from 'aws-sdk';
+import React, { Component } from 'react';
+import {s3Bucket} from '../../config'
+import {createUser, login} from '../../helpers/user'
+import './form.css';
+import AWS from 'aws-sdk';
 import uuid from 'uuid';
+
 
 
 class UserForm extends Component
@@ -136,7 +140,35 @@ this.setState({user});
 
 
 
+onClickSubmitForm(event)
+{ 
+	// Create an S3 client
+	var s3 = new AWS.S3();
+	// Create a bucket and upload something into it
+	var bucketName = this.state.user.username + uuid.v4();
+	var keyName = this.state.user.username;
 
+	s3.createBucket({ Bucket: bucketName }, function () {
+		var params = { Bucket: bucketName, Key: keyName };
+		s3.putObject(params, function (err, data) {
+			if (err)
+				console.log(err)
+			else
+				console.log("Successfully uploaded data to " + bucketName + "/");
+		});
+	});
+	const user={
+		...this.state.user,
+		bucket: event.target.value
+	};
+
+	this.setState({user});
+	console.log(this.state.user);
+	createUser(this.state.user).then((response) => {
+
+	console.log("Hey i got data after send post", response);
+	});
+}
 
 	render()
 	{
