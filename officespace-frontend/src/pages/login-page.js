@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./login-page.css";
-import img from "./Untitled-2.png";
+// import img from '../components/img/brand.png';
 
 
   
@@ -48,7 +48,7 @@ export default class LoginPage extends Component {
 
 <div className="brand animated fadeIn">
 	<div className="img">
-                        <img src={require("../img/brand.png")} style={{ width:"90vw", height:"50vh", marginTop:"40px", paddingBottom:"15px", paddingTop:"10px"}}/>
+                        // <img src={require("../components/img/brand.png")} style={{ width:"90vw", height:"50vh", marginTop:"40px", paddingBottom:"15px", paddingTop:"10px"}}/>
     	    	</div>
     	    	 <div className="paragraph">Please login to your account</div>
     	  

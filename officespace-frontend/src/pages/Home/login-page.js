@@ -10,7 +10,6 @@ import {Container, Row, Col, Card, CardTitle, CardBody} from 'reactstrap';
 
   
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-
   
 
 
@@ -51,16 +50,14 @@ export default class Login extends Component {
 
     return (
 
-	 // <div className = "col-sm-8"> 
-  //       <div className = "row"> 
+
       <Row>
       <Col md={6} lg={6} sm={6}/>
     	<div className="login-card">
 
 <div className="brand animated fadeIn">
-  <div className="img">
-    	    	<img src='../img/brand.png' alt="logo" />
-            </div>
+ 
+        
     	    	 <div className="paragraph">Please login to your account</div>
     	  
     	    

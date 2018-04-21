@@ -61,7 +61,7 @@ closeDropdownMenu(event){
 
     <nav className="sidebar">
     <div className="brand" >
-                        <img src={require("../img/brand.png")} style={{ width:"90vw", height:"50vh", marginTop:"40px", paddingBottom:"15px", paddingTop:"10px"}}/>
+                        <img src={require("../img/brand.png")} style={{ width:"34vw", height:"34vh", marginTop:"40px", paddingBottom:"15px", paddingTop:"10px"}}/>
 </div>
 <div className="sidebar-wrapper">
 

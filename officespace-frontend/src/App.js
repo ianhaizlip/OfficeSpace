@@ -114,7 +114,7 @@ class App extends Component {
 
           </div>
         </Router>
-
+<NotFound/>
         </div>
    
     );

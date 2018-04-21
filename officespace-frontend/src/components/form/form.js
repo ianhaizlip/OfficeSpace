@@ -1,10 +1,7 @@
 
 import React, { Component } from 'react';
 import {s3Bucket} from '../../config'
-import {createUser, login} from '../../helpers/user'
-import React, { Component } from 'react';
-import {s3Bucket} from '../../config'
-import {createUser, login} from '../../helpers/user'
+import {createUser, login} from '../../helpers/user';
 import './form.css';
 import AWS from 'aws-sdk';
 import uuid from 'uuid';

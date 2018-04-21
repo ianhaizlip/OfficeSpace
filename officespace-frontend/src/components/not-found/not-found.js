@@ -26,12 +26,12 @@ function NotFound() {
 		
 			<h1 className="display-3" style={styles}>404 Not Found</h1>
 			
-			<p className="lead" style={{fontFamily:"nunito", fontWeight:"bold", color:"#ffffff", fontSize:"30px"}}>This is so embarrassing...</p>
+			<p className="lead" style={{fontFamily:"nunito", fontWeight:"bold", color:"#ffffff", fontSize:"30px", marginLeft:"10px"}}>This is so embarrassing...</p>
 
-			<Button style={{ marginTop:"60px", marginLeft:"-10px",backgroundColor:"#1698b8", borderRadius:"15px", color: "#ffffff"
+			<Button style={{ marginTop:"60px", marginLeft:"-5px",backgroundColor:"#1698b8", borderRadius:"15px", color: "#ffffff", width:"160px"
 }}>Go back home</Button>
 			<div className="img">
-					<img src={require ('../img/dog.gif')} style={{marginTop:"-5px", marginLeft:"-500px", width:"20%"}}/>
+					<img src={require ('../img/dog.gif')} style={{marginTop:"2px", marginLeft:"-300px", width:"330px", zIndex:"1"}}/>
 
 		</div>
 
