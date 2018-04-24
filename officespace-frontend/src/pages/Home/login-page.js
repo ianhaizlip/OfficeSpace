@@ -49,20 +49,24 @@ export default class Login extends Component {
     }
 
     return (
+<div className="body">
 
+     
 
-      <Row>
-      <Col md={6} lg={6} sm={6}/>
+     
+     
     	<div className="login-card">
 
+
+
+
 <div className="brand animated fadeIn">
+
  
         
-    	    	 <div className="paragraph">Please login to your account</div>
-    	  
-    	    
+   <img src= "https://i.pinimg.com/originals/e3/bd/80/e3bd8040d980928d459eb79705afbce6.gif" style={{height:"30%", width: "40%", marginLeft:"120px"}}/>
 
-  
+ 
   
  <Form>
 
@@ -77,12 +81,12 @@ export default class Login extends Component {
        
                       <Input type="password" className="form-control" id="inputTextPassword" placeholder="Password" onChange={this.handleChange} style={{width:"40%", marginTop:"-100px"}}/>
        
-                    <Link to={`/dashboard`}><button className="btn btn" style={{marginTop:"-80px", width:"40%", marginLeft:"2px"}} onClick={() => {
+                    <Link to={`/dashboard`}><button className="btn btn" style={{marginTop:"-80px", width:"40%", marginLeft:"2px", backgroundColor:"#53C6BA"}} onClick={() => {
                       this.props.handleLogin(this.state, () => {
                         this.setState({ redirect: true });
                       })
-                    }}>Login</button></Link>
-          <p style={{marginTop:"-10px", marginLeft:"10px"}}>Forgot Password</p>
+                    }}>Sign in</button></Link>
+          <p style={{marginTop:"-10px", marginLeft:"10px"}}>Forgot Password?</p>
         
    </div>
         
@@ -91,11 +95,9 @@ export default class Login extends Component {
    </div>
 
         </div>
-              </Row>
 
-     	
-// </div>
-// </div>
+
+     	</div>
 
 
   )
