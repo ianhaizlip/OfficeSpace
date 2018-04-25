@@ -12,7 +12,6 @@ import Login from './pages/Home/login-page';
 import Footer from './components/footer/footer';
 import SideBar from './components/sidebar/side-bar';
 import Signup from './pages/Signup/Signup';
-import CalendarCard from './components/calendar/calendar';
 import UserForm from './components/form/form';
 import { Container, Row, Col } from 'reactstrap';
 import CompanyCards from './components/card/card';
@@ -20,6 +19,9 @@ import NotFound from './components/not-found/not-found';
 import Admin from "./pages/Admin/Admin";
 import Client from "./pages/Client/Client";
 import AdminDash from './pages/AdminDash';
+
+import Basic from './components/dnd/dnd';
+
 
 class App extends Component {
   state = {

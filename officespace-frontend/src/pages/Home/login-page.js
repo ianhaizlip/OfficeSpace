@@ -49,24 +49,39 @@ export default class Login extends Component {
     }
 
     return (
+ <Container fluid>
+
+
+ <Row>
+ <Col md="6">
+ <Card  style={{backgroundColor:"#A3B3CE", marginTop:"240px", height:"300px"}}>
+      <h1 style={{marginTop:"190px"}}>GeoFirm</h1>
+      <h3>Powered by OfficeSpace</h3>
+
+      </Card>
+      </Col>
+
+      <Col>
+
 <div className="body">
 
-     
+    
 
      
      
-    	<div className="login-card">
+    	<div className="login-card" style={{marginTop:"300px"}}>
 
 
 
 
 <div className="brand animated fadeIn">
+ <h1 style={{color:"rgb(83, 198, 186)", marginLeft:"135px", paddingTop:"30px"}}>Sign In</h1>
 
- 
-        
-   <img src= "https://i.pinimg.com/originals/e3/bd/80/e3bd8040d980928d459eb79705afbce6.gif" style={{height:"30%", width: "40%", marginLeft:"120px"}}/>
+ <div className="files">
 
- 
+   <img src= "https://i.pinimg.com/originals/e3/bd/80/e3bd8040d980928d459eb79705afbce6.gif" style={{height:"100px", width:"250px",  borderRadius:"50%", objectFit:"cover", marginTop:"-1px"}} />
+
+ </div>
   
  <Form>
 
@@ -98,7 +113,9 @@ export default class Login extends Component {
 
 
      	</div>
-
+      </Col>
+      </Row>
+</Container>
 
   )
 

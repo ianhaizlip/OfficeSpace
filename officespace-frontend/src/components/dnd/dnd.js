@@ -32,8 +32,8 @@ class Basic extends Component {
           </ul>
         <div className="dropzone">
           <Dropzone onDrop={this.onDrop.bind(this)}  style={{height:"40vh", width:"30vw", borderStyle:"dashed", borderColor:"#4363A8 ", marginTop:"70px", marginLeft:"100px"}}>
-          <img src={require("../img/clouds.png")} style={{height:"100px", width:"100px"}}/>
-            <p style={{fontSize:"30px"}}>Drag & Drop Files to Upload</p>
+          <img src={require("../img/clouds.png")} id="image" />
+            <p style={{fontSize:"30px", marginLeft:"30px"}}>Drag & Drop Files to Upload</p>
             <p>Document type supported pdf, docx, txt, jpeg</p>
           
           </Dropzone>
