@@ -3,7 +3,7 @@ import SideBar from '../../components/sidebar/side-bar';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/footer/footer';
 import CompanyCards from '../../components/card/card';
-import AdminTable from '../../components/client-table/client-table';
+import AdminTable from '../../components/admin-table/admin-table';
 import {Col, Row, Container, Card, CardBody, CardTitle} from 'reactstrap';
 
 
@@ -26,7 +26,7 @@ const Dashboard = () => (
 
  <Col md="12">
 
-<CompanyCards/>
+<AdminTable/>
 
 </Col>
 </div>
