@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6a1a84a-bfc1-4dc1-b6a9-4708e20493d4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/officespace-frontend/src/pages/Client/Client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/officespace-backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/officespace-backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/officespace-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/officespace-frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/officespace-frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/officespace-frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/officespace-frontend/src/pages/Admin/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/officespace-frontend/src/pages/Admin/Admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/officespace-frontend/src/pages/Home/login-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/officespace-frontend/src/pages/Home/login-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/officespace-frontend/src/components/form/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/officespace-frontend/src/components/form/form.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,68 +17,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/officespace-frontend/src/App.js">
+      <file leaf-file-name="form.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/officespace-frontend/src/components/form/form.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="not-found.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/officespace-frontend/src/components/not-found/not-found.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="side-bar.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/officespace-frontend/src/components/sidebar/side-bar.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="59" column="29" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
-            </state>
+            <state relative-caret-position="-287" />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="form.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/officespace-frontend/src/components/form/form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
-              <caret line="57" selection-start-line="57" selection-end-line="57" />
+            <state relative-caret-position="-37">
+              <caret line="176" column="36" lean-forward="true" selection-start-line="176" selection-start-column="36" selection-end-line="176" selection-end-column="36" />
+              <folding>
+                <element signature="e#1#42#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Client.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/officespace-frontend/src/pages/Client/Client.js">
+      <file leaf-file-name="login-page.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/officespace-frontend/src/pages/Home/login-page.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+            <state relative-caret-position="-1450">
+              <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Admin.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/officespace-frontend/src/pages/Admin/Admin.js">
+      <file leaf-file-name="side-bar.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/officespace-frontend/src/components/sidebar/side-bar.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="26" lean-forward="true" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Signup.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/officespace-frontend/src/pages/Signup/Signup.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-265">
-              <caret line="6" column="17" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            <state relative-caret-position="960">
+              <caret line="64" column="26" lean-forward="true" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -92,29 +57,20 @@
       <file leaf-file-name="login-page.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/officespace-frontend/src/pages/Home/login-page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Utils.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/officespace-frontend/src/components/table/Utils.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+            <state relative-caret-position="35">
+              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="table.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/officespace-frontend/src/components/table/table.js">
+      <file leaf-file-name="PeopleCard.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/officespace-frontend/src/components/PeopleCard/PeopleCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1725">
-              <caret line="119" column="12" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="12" />
+            <state relative-caret-position="115">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -141,6 +97,7 @@
         <option value="$PROJECT_DIR$/officespace-frontend/src/pages/Admin/Admin.js" />
         <option value="$PROJECT_DIR$/officespace-frontend/src/pages/Client/Client.js" />
         <option value="$PROJECT_DIR$/officespace-frontend/src/App.js" />
+        <option value="$PROJECT_DIR$/officespace-frontend/src/components/form/form.js" />
       </list>
     </option>
   </component>
@@ -155,10 +112,10 @@
     <handled-path value="$PROJECT_DIR$/officespace-frontend/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="17" />
-    <option name="y" value="23" />
-    <option name="width" value="1680" />
-    <option name="height" value="981" />
+    <option name="x" value="9" />
+    <option name="y" value="53" />
+    <option name="width" value="1405" />
+    <option name="height" value="732" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -196,23 +153,7 @@
               <item name="officespace-frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="card" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OfficeSpace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OfficeSpace" type="462c0819:PsiDirectoryNode" />
-              <item name="officespace-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="form" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OfficeSpace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OfficeSpace" type="462c0819:PsiDirectoryNode" />
-              <item name="officespace-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="not-found" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OfficeSpace" type="b2602c69:ProjectViewProjectNode" />
@@ -235,31 +176,7 @@
               <item name="OfficeSpace" type="462c0819:PsiDirectoryNode" />
               <item name="officespace-frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="table" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OfficeSpace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OfficeSpace" type="462c0819:PsiDirectoryNode" />
-              <item name="officespace-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OfficeSpace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OfficeSpace" type="462c0819:PsiDirectoryNode" />
-              <item name="officespace-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="Admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OfficeSpace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OfficeSpace" type="462c0819:PsiDirectoryNode" />
-              <item name="officespace-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OfficeSpace" type="b2602c69:ProjectViewProjectNode" />
@@ -268,14 +185,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="Home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OfficeSpace" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OfficeSpace" type="462c0819:PsiDirectoryNode" />
-              <item name="officespace-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="Signup" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -323,20 +232,20 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22730000" />
+    <option name="totallyTimeSpent" value="27829000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="17" y="23" width="1680" height="981" extended-state="0" />
+    <frame x="9" y="53" width="1405" height="732" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15476191" />
-      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27544484" />
+      <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50069445" side_tool="true" weight="0.32974428" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50069445" side_tool="true" weight="0.32974428" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49930555" visible="true" weight="0.32884398" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49930555" visible="true" weight="0.32826748" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -365,95 +274,19 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/officespace-backend/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/officespace-backend/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/officespace-backend/schema/schema.sql" />
-    <entry file="file://$PROJECT_DIR$/officespace-backend/schema/seed.sql" />
-    <entry file="file://$PROJECT_DIR$/officespace-backend/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/officespace-backend/routes/rds-routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="17" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="38" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/officespace-backend/routes/s3-routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="55" column="38" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/officespace-backend/models/user.js" />
+    <entry file="file://$PROJECT_DIR$/officespace-backend/routes/rds-routes.js" />
+    <entry file="file://$PROJECT_DIR$/officespace-backend/routes/s3-routes.js" />
     <entry file="file://$PROJECT_DIR$/officespace-frontend/src/pages/FileUpload/FileUpload.js" />
-    <entry file="file://$PROJECT_DIR$/officespace-backend/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/officespace-backend/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/officespace-backend/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/officespace-backend/server.js" />
+    <entry file="file://$PROJECT_DIR$/officespace-backend/server.js" />
+    <entry file="file://$PROJECT_DIR$/officespace-backend/models/user.js" />
     <entry file="file://$PROJECT_DIR$/officespace-backend/schema/schema.sql" />
     <entry file="file://$PROJECT_DIR$/officespace-backend/schema/seed.sql" />
-    <entry file="file://$PROJECT_DIR$/officespace-backend/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/officespace-backend/routes/rds-routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="17" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="38" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/officespace-backend/routes/s3-routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="55" column="38" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/officespace-frontend/src/components/calendar/calendar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/officespace-backend/models/user.js" />
+    <entry file="file://$PROJECT_DIR$/officespace-backend/routes/rds-routes.js" />
+    <entry file="file://$PROJECT_DIR$/officespace-backend/routes/s3-routes.js" />
+    <entry file="file://$PROJECT_DIR$/officespace-frontend/src/components/calendar/calendar.js" />
     <entry file="file://$PROJECT_DIR$/officespace-frontend/src/components/Update/Update.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -461,33 +294,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/officespace-backend/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/officespace-backend/controllers/userCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/officespace-frontend/src/pages/Login/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="9" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/officespace-backend/server.js" />
+    <entry file="file://$PROJECT_DIR$/officespace-backend/controllers/userCtrl.js" />
+    <entry file="file://$PROJECT_DIR$/officespace-frontend/src/pages/Login/Login.js" />
     <entry file="file://$PROJECT_DIR$/officespace-frontend/src/components/Input/Input.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -505,74 +314,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/officespace-frontend/src/components/PeopleCard/PeopleCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/officespace-backend/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/officespace-backend/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/officespace-backend/server.js" />
+    <entry file="file://$PROJECT_DIR$/officespace-backend/models/user.js" />
     <entry file="file://$PROJECT_DIR$/officespace-backend/schema/schema.sql" />
     <entry file="file://$PROJECT_DIR$/officespace-backend/schema/seed.sql" />
-    <entry file="file://$PROJECT_DIR$/officespace-backend/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/officespace-backend/routes/rds-routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="17" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="38" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/officespace-backend/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="43" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/officespace-backend/routes/s3-routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="55" column="38" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/officespace-frontend/src/components/sidebar/side-bar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2955">
-          <caret line="197" column="3" selection-start-line="197" selection-start-column="3" selection-end-line="197" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/officespace-backend/models/user.js" />
+    <entry file="file://$PROJECT_DIR$/officespace-backend/routes/rds-routes.js" />
+    <entry file="file://$PROJECT_DIR$/officespace-backend/server.js" />
+    <entry file="file://$PROJECT_DIR$/officespace-backend/routes/s3-routes.js" />
     <entry file="file://$PROJECT_DIR$/officespace-frontend/src/components/table/Utils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -587,9 +340,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1725">
           <caret line="119" column="12" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -615,20 +365,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/officespace-frontend/src/components/form/form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/officespace-frontend/src/pages/Home/login-page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/officespace-frontend/src/pages/Admin/Admin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -645,11 +381,73 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/officespace-frontend/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+        <state relative-caret-position="245">
+          <caret line="122" column="7" selection-start-line="122" selection-start-column="7" selection-end-line="122" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#825#873#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/officespace-frontend/src/pages/AdminDash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-243">
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/officespace-frontend/src/components/PeopleCard/PeopleCard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/officespace-frontend/src/components/card/card.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/officespace-frontend/src/components/form/form.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-287" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/officespace-frontend/src/components/form/form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-37">
+          <caret line="176" column="36" lean-forward="true" selection-start-line="176" selection-start-column="36" selection-end-line="176" selection-end-column="36" />
+          <folding>
+            <element signature="e#1#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/officespace-frontend/src/components/sidebar/side-bar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="64" column="26" lean-forward="true" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/officespace-frontend/src/pages/Home/login-page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/officespace-frontend/src/pages/Home/login-page.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1450">
+          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
         </state>
       </provider>
     </entry>

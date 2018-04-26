@@ -170,19 +170,14 @@ onClickSubmitForm(event)
 	render()
 	{
 		return(
-
-			    <div className="main-panel" style={{
-
-
-
-  width: "calc(100%-280px)",
-  height:"95vh",
-  overflow: "auto",
-  backgroundColor:"#fafcfe",
-  minHeight: "100%",
-  boxShadow: "0 30px 130px 0 rgba(90, 105, 116, 0.1)"
-}}>
-<Header/>
+	<div className="main-panel" style={{
+		  width: "calc(100%-280px)",
+		  height:"95vh",
+		  overflow: "auto",
+		  backgroundColor:"#fafcfe",
+		  minHeight: "100%",
+		  boxShadow: "0 30px 130px 0 rgba(90, 105, 116, 0.1)"
+	}}>
 			 <Card>
 			 <CardBody>
 			 <div className="user-form shadow">
