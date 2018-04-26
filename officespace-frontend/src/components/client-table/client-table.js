@@ -7,30 +7,19 @@ class ClientTable extends Component {
         super(props);
 
         this.state = {
-            files: [
-                {name: 'file1',
-                    link: 'https://www.google.com/'},
-                {name: 'file2',
-                    link: 'https://www.google.com/'},
-                {name: 'file3',
-                    link: 'https://www.google.com/'},
-                {name: 'file4',
-                    link: 'https://www.google.com/'},
-                {name: 'file5',
-                    link: 'https://www.google.com/'},
-            ],
+            files: [],
         };
 
     }
 
-    // componentDidMount(){
-    //     const {files} = this.props;
-    //
-    //     console.log('files mounted', files);
-    //     this.setState({
-    //         files: files,
-    //     });
-    // }
+    componentDidMount(){
+        const {files} = this.props;
+
+        console.log('files mounted', files);
+        this.setState({
+            files: files,
+        });
+    }
 
     render() {
         const files = this.state.files;
