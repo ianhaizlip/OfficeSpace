@@ -7,29 +7,10 @@ class Footer extends Component {
      
 <Container fluid>
 <footer className="page-footer">
-  
-
-
-
-
-
-
-
-
-
-
 
     <p className="footer-copyright" style={{ lineHeight:"1"}}>
         OfficeSpace © 2018 Copyright
-       
-
-</p>
-
-
-
-
-
-     
+    </p>
 
 </footer>
 </Container>

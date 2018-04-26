@@ -1,15 +1,15 @@
 import React from 'react';
-import SideBar from '../components/sidebar/side-bar';
-import Header from '../components/Header/Header';
-import Footer from '../components/footer/footer';
-import CompanyCards from '../components/card/card';
+import SideBar from '../../components/sidebar/side-bar';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/footer/footer';
+import CompanyCards from '../../components/card/card';
+import Table from '../../components/admin-table/admin-table';
 import {Col, Row, Container, Card, CardBody, CardTitle} from 'reactstrap';
+import AdminTable from '../../components/admin-table/admin-table';
 
 
 const Dashboard = () => (
     <div className="main-panel" style={{
-
-
 
   width: "calc(100%-280px)",
   height:"95vh",
@@ -23,30 +23,15 @@ const Dashboard = () => (
  
 
   <div className="content" style={{padding:"10px", marginLeft:"300px"}}>
-   <Header/>
+
  <Col md="12">
 
+<AdminTable/>
 
-      
-            
-       
-
-        <CompanyCards/>
-         
-
+</Col>
+</div>
 <Footer/>
-
-         
-  </Col>
-
-
-
-
 </div>
-
-</div>
-         
-
 
 );
 

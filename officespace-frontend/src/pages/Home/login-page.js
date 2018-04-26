@@ -33,13 +33,6 @@ export default class Login extends Component {
     });
   }
 
-
-
-  
-
-
-
-  
   render() {
     if (this.state.redirect && this.props.userInfo.isAdmin) {
       return <Redirect to={`/admin/${this.props.userInfo.username}`} />;
@@ -65,14 +58,7 @@ export default class Login extends Component {
 
 <div className="body">
 
-    
-
-     
-     
     	<div className="login-card" style={{marginTop:"300px"}}>
-
-
-
 
 <div className="brand animated fadeIn">
  <h1 style={{color:"rgb(83, 198, 186)", marginLeft:"135px", paddingTop:"30px"}}>Sign In</h1>

@@ -28,18 +28,14 @@ function NotFound() {
 			
 			<p className="lead" style={{fontFamily:"nunito", fontWeight:"bold", color:"#ffffff", fontSize:"30px", marginLeft:"10px"}}>This is so embarrassing...</p>
 
-			<Button style={{ marginTop:"60px", marginLeft:"-5px",backgroundColor:"#1698b8", borderRadius:"15px", color: "#ffffff", width:"160px"
-}}>Go back home</Button>
+			<Button href={'/dashboard'} style={{ marginTop:"60px", marginLeft:"-5px",backgroundColor:"#1698b8", borderRadius:"15px", color: "#ffffff", width:"160px"
+			}}>Go back home</Button>
+
 			<div className="img">
 					<img src={require ('../img/dog.gif')} style={{marginTop:"2px", marginLeft:"-300px", width:"330px", zIndex:"1"}}/>
+			</div>
 
 		</div>
-
-</div>
-
+	)};
 	
-)
-}
-
-
 export default NotFound;

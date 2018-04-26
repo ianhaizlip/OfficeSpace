@@ -4,25 +4,21 @@ import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle} from 'reactstrap';
 import axios from 'axios';
 
-
-
 import logo from "./logo.svg";
 import "./App.css";
 import Login from './pages/Home/login-page';
 import Footer from './components/footer/footer';
-import SideBar from './components/sidebar/side-bar';
+import SideBarAdmin from './components/sidebar/side-bar';
 import Signup from './pages/Signup/Signup';
 import UserForm from './components/form/form';
 import { Container, Row, Col } from 'reactstrap';
 import CompanyCards from './components/card/card';
 import NotFound from './components/not-found/not-found';
-import Admin from "./pages/Admin/Admin";
-import Client from "./pages/Client/Client";
-// import AdminDash from './pages/AdminDash';
+
+import ClientDash from "./pages/Client/ClientDash";
+import AdminDash from './pages/Admin/AdminDash';
 import Header from './components/Header/Header';
 import Basic from './components/dnd/dnd';
-import Dashboard from './pages/AdminDash';
-import ClientDash from './pages/ClientDash';
 
 class App extends Component {
   state = {
@@ -78,7 +74,7 @@ class App extends Component {
    
         <div className="App">
             {
-              this.state.user.loggedIn ? <SideBar userInfo={this.state.user} logout={this.userLogOut}/>
+              this.state.user.loggedIn ? <SideBarAdmin userInfo={this.state.user} logout={this.userLogOut}/>
                   : null
             }
         <Router>
@@ -90,7 +86,7 @@ class App extends Component {
                 <Route path='/admin/:username' render={(props)=> {
                   console.log('User Logged in: ', this.state.user.loggedIn, "| User is Admin: ", this.state.user.isAdmin);
                   return this.state.user.isAdmin ? (
-                      <Admin {...props}/>
+                      <AdminDash {...props}/>
                   ) : (
                       <Redirect to='/'/>
                   )
@@ -98,18 +94,18 @@ class App extends Component {
                 <Route path='/client/:username' render={(props)=> {
                     console.log('User Logged in: ', this.state.user.loggedIn, "| User is Admin: ", this.state.user.isAdmin);
                     return !this.state.user.isAdmin ? (
-                        <Client userInfo={this.state.user} {...props}/>
+                        <ClientDash userInfo={this.state.user} {...props}/>
                     ) : (
                         <Redirect to='/'/>
                     )
                 }} />
 
-              <Route path='/dashboard' component={SideBar} exact />
+              <Route path='/dashboard' component={AdminDash} exact />
               {/* <Route path='/inbox' component={} exact /> */}
-              {/* <Route path='/clients' component={} exact /> */}
+              <Route path='/clients' component={ClientDash} exact />
               {/* <Route path='/login' component={Form} exact /> */}
-              <Route path='/signup' component={UserForm} exact {...this.props}/>
-              {/* <Route path='/client/:user/:bucket' component={UserProfile}/> */}
+              <Route path='/signup' exact component={UserForm} {...this.props}/>
+              {/* <Route path='/client/:bucket' component={UserProfile}/> */}
               <Route component={NotFound}/>
       
               
@@ -118,8 +114,6 @@ class App extends Component {
           </div>
           
         </Router>
-<UserForm/>
-    
        
         </div>
     );
