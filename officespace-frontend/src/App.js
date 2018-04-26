@@ -116,9 +116,9 @@ class App extends Component {
             </Switch>
 
           </div>
-          
         </Router>
-<UserForm/>
+
+         <Basic/> 
     
        
         </div>

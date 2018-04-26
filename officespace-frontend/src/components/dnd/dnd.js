@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
-import {Card, Row, CardHeader} from 'reactstrap';
+import {Card, Row, CardHeader, Button} from 'reactstrap';
 import './dnd.css';
-
-
+import SideBar from '../sidebar/side-bar';
+import Header from '../Header/Header';
 
 class Basic extends Component {
   constructor() {
@@ -19,9 +19,11 @@ class Basic extends Component {
 
   render() {
     return (
-    
+  <div className="top">  
+<SideBar/>
+<Header/>
+<Card id="dndCard" >
 
-<Card style={{height:"65vh", width:"45vw", marginTop:"100px", marginLeft:"100px"}}>
 <CardHeader style={{backgroundColor:"#12a79d"}}>
           <h2 style={{marginTop:"20px", color:"#ffffff"}}>Upload</h2>
           </CardHeader>
@@ -31,13 +33,12 @@ class Basic extends Component {
             }
           </ul>
         <div className="dropzone">
-          <Dropzone onDrop={this.onDrop.bind(this)}  style={{height:"40vh", width:"30vw", borderStyle:"dashed", borderColor:"#4363A8 ", marginTop:"70px", marginLeft:"100px"}}>
+          <Dropzone onDrop={this.onDrop.bind(this)}  style={{height:"40%", width:"75%", borderStyle:"dashed", borderColor:"#4363A8 ", marginTop:"70px", marginLeft:"100px"}}>
           <img src={require("../img/clouds.png")} id="image" />
-            <p style={{fontSize:"30px", marginLeft:"30px"}}>Drag & Drop Files to Upload</p>
-            <p>Document type supported pdf, docx, txt, jpeg</p>
-          
+            <p style={{fontSize:"30px", marginLeft:"90px"}}>Drag & Drop Files to Upload</p>
           </Dropzone>
-           
+                     <Button id="dndButton">Upload</Button>
+
         </div>
 
       
@@ -45,12 +46,11 @@ class Basic extends Component {
    
   </Card>
 
-      
+   </div>   
        
 
 
     );
   }
 }
-
 export default Basic;

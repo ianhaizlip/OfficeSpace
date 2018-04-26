@@ -23,6 +23,9 @@ import Badge from '../badge/badge';
                     <li>    <img src={require("../img/photo.jpeg")} className="img-circle" alt="User Image" /></li>
                     <li>    <img src="http://byrobin.nl/store/wp-content/uploads/sites/4/2016/03/local.png" className="notif" />
 </li>
+                    <li>  <div className="username">Demo User</div></li>
+
+  <li><div className="title">Admin</div></li>
                     </ul>
 
    <div className="user-wrapper">
@@ -35,12 +38,10 @@ import Badge from '../badge/badge';
 
  <div className="user-panel">
 
-                <img src={require("../img/photo.jpeg")} className="img-circle" alt="User Image" />
 
                 <div className="userinfo">
 
-  <div className="username">Demo User</div>
-  <div className="title">Admin</div>
+ 
 
 
   </div>

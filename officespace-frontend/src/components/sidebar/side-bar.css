@@ -66,8 +66,7 @@
   align-items: center;
   height: 62px;
   width: 100%;
-  background-color: #57CEB8;
-
+background-color: #5063b8;
 }
 
 .sidebar .sidebar-wrapper {
@@ -106,7 +105,7 @@
 
 @media (max-width: 768px) {
     .sidebar {
-        margin-left: -250px;
+        margin-left: -350px;
     }
     .sidebar.active {
         margin-left: 0;
@@ -180,9 +179,7 @@ a[data-toggle="collapse"] {
 
 
 .sidebar {
-   
 background-image: linear-gradient(to top, #95a4dc, #7e8ed0, #6778c4, #5063b8, #374eab);    color: #fff;
-    transition: all 0.3s;
 }
 
 .sidebar-header {
