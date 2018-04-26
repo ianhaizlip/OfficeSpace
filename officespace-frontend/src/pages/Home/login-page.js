@@ -101,7 +101,7 @@ export default class Login extends Component {
                         this.setState({ redirect: true });
                       })
                     }}>Sign in</button></Link>
-          <p style={{marginTop:"-10px", marginLeft:"10px"}}>Forgot Password?</p>
+          <p style={{marginTop:"-10px", marginLeft:"10px", color: "#A8A8A8 "}}>Forgot Password?</p>
         
    </div>
         

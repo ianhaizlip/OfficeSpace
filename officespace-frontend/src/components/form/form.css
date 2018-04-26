@@ -13,9 +13,35 @@
 }
 
 .card{
+	float:right;
 
 	display: inline-block;
-	width: 80%;
+	width: 50%;
 	height: 40px;
 	background-color:white;
+}
+
+#inputTextUsername{
+	width:50%;
+}
+
+#inputTextPassword{
+	width:50%;
+
+}
+
+#inputTextEmail{
+	width:50%;
+}
+
+#inputTextBucket{
+	width:50%;
+}
+
+#inputTextImgUrl{
+	width:50%;
+}
+
+#inputSelectRegion{
+	width:50%;
 }

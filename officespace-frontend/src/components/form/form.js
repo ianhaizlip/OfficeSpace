@@ -5,8 +5,8 @@ import {createUser, login} from '../../helpers/user';
 import './form.css';
 import AWS from 'aws-sdk';
 import uuid from 'uuid';
-
-
+import Header from '../Header/Header';
+import {Card, CardBody} from 'reactstrap';
 
 class UserForm extends Component
 {
@@ -170,9 +170,24 @@ onClickSubmitForm(event)
 	render()
 	{
 		return(
-			<div className="card">
+
+			    <div className="main-panel" style={{
+
+
+
+  width: "calc(100%-280px)",
+  height:"95vh",
+  overflow: "auto",
+  backgroundColor:"#fafcfe",
+  minHeight: "100%",
+  boxShadow: "0 30px 130px 0 rgba(90, 105, 116, 0.1)"
+}}>
+<Header/>
+			 <Card>
+			 <CardBody>
 			 <div className="user-form shadow">
-			  <p className="font-form paragraph-header">Clients</p>
+			
+			  <p className="font-form paragraph-header">User Form</p>
 				<div className="form-group">
                     <label htmlFor="inputTextUsername">Username</label>
                     <input onKeyUp={this.onKeyUpInputTextUsername} type="text" className="form-control" id="inputTextUsername" placeholder="Username"/>
@@ -208,8 +223,13 @@ onClickSubmitForm(event)
 					</select>
 				</div>		 
 		    <button onClick={this.onClickSubmitForm}  className="btn btn-info w-10">Submit</button>
+
         </div>
+        </CardBody>
+           </Card>
 	 </div>	
+
+	
 	);
   }
 }

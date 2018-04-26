@@ -18,10 +18,11 @@ import CompanyCards from './components/card/card';
 import NotFound from './components/not-found/not-found';
 import Admin from "./pages/Admin/Admin";
 import Client from "./pages/Client/Client";
-import AdminDash from './pages/AdminDash';
-
+// import AdminDash from './pages/AdminDash';
+import Header from './components/Header/Header';
 import Basic from './components/dnd/dnd';
-
+import Dashboard from './pages/AdminDash';
+import ClientDash from './pages/ClientDash';
 
 class App extends Component {
   state = {
@@ -115,10 +116,12 @@ class App extends Component {
             </Switch>
 
           </div>
+          
         </Router>
-
+<UserForm/>
+    
+       
         </div>
-   
     );
   }
 }

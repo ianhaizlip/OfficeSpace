@@ -61,7 +61,7 @@ closeDropdownMenu(event){
 
     <nav className="sidebar">
     <div className="brand" >
-                        <img src={require("../img/brand.png")} style={{ width:"34vw", height:"34vh", marginTop:"40px", paddingBottom:"15px", paddingTop:"10px"}}/>
+    <h1>GeoFirm</h1>
 </div>
 <div className="sidebar-wrapper">
 
@@ -70,13 +70,7 @@ closeDropdownMenu(event){
     <div className="user-panel">
   
     <div className="user">
-                            <img src={require("../img/photo.jpeg")} className="img-circle" alt="User Image" style={{height:"100px", width:"100px",borderRadius: "60%", margin:"20px", objectPosition:"center right"
-}}/>
-<div className="userinfo">
-  <div className="username">Demo User</div>
-  <div className="title">Admin</div>
-  </div>
-
+                           
                         </div>
                         
                        
@@ -94,7 +88,6 @@ closeDropdownMenu(event){
             <li className="active"><a href="/dashboard"> <i className="fas fa-tachometer-alt fa-lg" id="icons"></i>Dashboard</a></li>
 
 
-            <li><a href="/inbox"><i className="fas fa-envelope fa-lg" id="icons"></i>Inbox</a></li>
             
             <li><a href="/clients"><i className="fas fa-users fa-lg" style={{marginTop:"0px", marginLeft:"-10px"}}id="icons"></i> Manage Clients</a></li>
 
