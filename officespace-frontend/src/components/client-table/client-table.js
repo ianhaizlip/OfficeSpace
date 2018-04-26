@@ -7,7 +7,8 @@ class ClientTable extends Component {
         super(props);
 
         this.state = {
-            files: [],
+            files: [{Name: "Stuff", Type: "file"
+            }],
         };
 
     }

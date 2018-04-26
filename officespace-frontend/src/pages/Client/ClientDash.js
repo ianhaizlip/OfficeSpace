@@ -3,7 +3,7 @@ import SideBar from '../../components/sidebar/side-bar';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/footer/footer';
 import CompanyCards from '../../components/card/card';
-import Table from '../../components/client-table/client-table';
+import ClientTable from '../../components/client-table/client-table';
 import {Col, Row, Container, Card, CardBody, CardTitle} from 'reactstrap';
 
 
@@ -23,7 +23,7 @@ const Dashboard = () => (
   <div className="content" style={{padding:"10px", marginLeft:"300px"}}>
  <Col md="12">
 
-      <Table/>
+      <ClientTable/>
       
 </Col>
 </div>

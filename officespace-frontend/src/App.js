@@ -8,7 +8,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Login from './pages/Home/login-page';
 import Footer from './components/footer/footer';
-import SideBarAdmin from './components/sidebar/side-bar';
+import SideBar from './components/sidebar/side-bar';
 import Signup from './pages/Signup/Signup';
 import UserForm from './components/form/form';
 import { Container, Row, Col } from 'reactstrap';
@@ -74,7 +74,7 @@ class App extends Component {
    
         <div className="App">
             {
-              this.state.user.loggedIn ? <SideBarAdmin userInfo={this.state.user} logout={this.userLogOut}/>
+              this.state.user.loggedIn ? <SideBar userInfo={this.state.user} logout={this.userLogOut}/>
                   : null
             }
         <Router>
@@ -113,9 +113,6 @@ class App extends Component {
 
           </div>
         </Router>
-
-         <Basic/> 
-    
        
         </div>
     );
